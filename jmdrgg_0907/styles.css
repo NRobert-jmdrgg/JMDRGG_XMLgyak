@@ -1,0 +1,31 @@
+.iit-image {
+    width: 300px;
+}
+
+a {
+    color: white;
+    font-size: 20px;
+}
+
+.navbar {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+.navbar a {
+    display: table-cell;
+    text-align: center;
+}
+
+body {
+    color: white;
+    background: url('./img/bg.jpg') center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  margin-left: 85px;
+  margin-right: 85px;
+}
+

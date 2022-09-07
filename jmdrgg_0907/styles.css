@@ -4,7 +4,7 @@
 
 a {
   color: white;
-  font-size: 20px;
+  font-size: 32px;
 }
 
 .navbar {
@@ -19,6 +19,7 @@ a {
 }
 
 body {
+  font-size: 24px;
   color: white;
   background: url('./img/bg.jpg') center center fixed;
   -webkit-background-size: cover;

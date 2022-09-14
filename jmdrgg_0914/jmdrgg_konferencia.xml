@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<konferencia id="1">
+  <cim>Miskolc, Egyetem út 1, 3515</cim>
+  <hallgatok>
+    <hallgato id="h1">
+      <nev>Pista</nev>
+      <lakcim>Budapest, xzy út 1.</lakcim>
+    </hallgato>
+    <hallgato id="h2">
+      <nev>Laci</nev>
+      <lakcim>Kisőjszállás, asd út 12.</lakcim>
+    </hallgato>
+  </hallgatok>
+  <helyszin>A1/XXXII</helyszin>
+  <eloado id="e1">
+    <nev>Viktor Ferenc</nev>
+    <adoszam>ASD123</adoszam>
+    <lakcim>Győr</lakcim>
+  </eloado>
+  <datum>2022.09.14</datum>
+</konferencia>

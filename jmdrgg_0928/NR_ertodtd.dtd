@@ -1,0 +1,22 @@
+<!ATTLIST A a ID #REQUIRED>
+<!ELEMENT A (b+, c)>
+
+<!ELEMENT b (x, y)>
+<!ELEMENT x (#PCDATA)>
+<!ELEMENT y (#PCDATA)>
+
+<!ELEMENT c (d, e)>
+<!ELEMENT d (#PCDATA)>
+<!ELEMENT e (#PCDATA)>
+
+<!ATTLIST B a ID #REQUIRED>
+<!ELEMENT B (#PCDATA)>
+<!ELEMENT b (x, y)>
+<!ELEMENT x (#PCDATA)>
+<!ELEMENT y (#PCDATA)>
+
+<!ATTLIST C a ID #REQUIRED>
+<!ELEMENT C (b)>
+<!ELEMENT b (#PCDATA)>
+
+

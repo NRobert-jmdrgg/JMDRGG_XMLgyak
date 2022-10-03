@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE NR_adatbazis SYSTEM "./NR_adatbazis.dtd">
+
+
+<NR_adatbazis>
+  <dolgozo kod="id_123">
+    <nev>Nagy Róbert</nev>
+    <fizetes>0</fizetes>
+  </dolgozo>
+  <dolgozo kod="id_124">
+    <nev>Viktor Ferenc</nev>
+    <fizetes>4823000</fizetes>
+  </dolgozo>
+</NR_adatbazis>

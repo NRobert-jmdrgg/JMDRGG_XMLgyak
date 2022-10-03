@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE NRmodell SYSTEM "./NR_ertodtd.dtd">
+
+<NRmodell xmlns:a="_a1" xmlns:b="_b1" xmlns:c="_c1" xmlns:a_b="_a_b1">
+  <A a:a="a1">
+    <a:b>
+      <a:x>asd</a:x>
+      <a:y>dsadsda</a:y>
+    </a:b>
+    <a:c>
+      <a:d>asdasdasdasd</a:d>
+      <a:e>asdasd</a:e>
+    </a:c>
+  </A>
+  <C c:a="c1">
+    <c:b>sa</c:b>
+  </C>
+  <B b:a="b1" CREF="c1">
+    <b:b>
+      <b:x>asdasda</b:x>
+      <b:y>assadasdasdas</b:y>
+    </b:b>
+  </B>
+  <A_B AREF="a1" BREF="b1">
+    <a_b:c>asdasdasdasdas</a_b:c>
+  </A_B>
+</NRmodell>

@@ -1,22 +1,35 @@
-<!ATTLIST A a ID #REQUIRED>
-<!ELEMENT A (b+, c)>
+<!ATTLIST NRmodell xmlns:a CDATA #REQUIRED
+  xmlns:b CDATA #REQUIRED
+  xmlns:c CDATA #REQUIRED
+  xmlns:a_b CDATA #REQUIRED
+>
+<!ELEMENT NRmodell (A, C, B, A_B)>
 
-<!ELEMENT b (x, y)>
-<!ELEMENT x (#PCDATA)>
-<!ELEMENT y (#PCDATA)>
+<!ATTLIST A a:a ID #REQUIRED>
+<!ELEMENT A (a:b+, a:c)>
 
-<!ELEMENT c (d, e)>
-<!ELEMENT d (#PCDATA)>
-<!ELEMENT e (#PCDATA)>
+<!ELEMENT a:b (a:x, a:y)>
+<!ELEMENT a:x (#PCDATA)>
+<!ELEMENT a:y (#PCDATA)>
 
-<!ATTLIST B a ID #REQUIRED>
-<!ELEMENT B (#PCDATA)>
-<!ELEMENT b (x, y)>
-<!ELEMENT x (#PCDATA)>
-<!ELEMENT y (#PCDATA)>
+<!ELEMENT a:c (a:d, a:e)>
+<!ELEMENT a:d (#PCDATA)>
+<!ELEMENT a:e (#PCDATA)>
 
-<!ATTLIST C a ID #REQUIRED>
-<!ELEMENT C (b)>
-<!ELEMENT b (#PCDATA)>
+<!ATTLIST B b:a ID #REQUIRED>
+<!ATTLIST B CREF IDREF #REQUIRED>
+<!ELEMENT B (b:b)>
+<!ELEMENT b:b (b:x, b:y)>
+<!ELEMENT b:x (#PCDATA)>
+<!ELEMENT b:y (#PCDATA)>
+
+<!ATTLIST A_B AREF IDREF #REQUIRED>
+<!ATTLIST A_B BREF IDREF #REQUIRED>
+<!ELEMENT A_B (a_b:c)>
+<!ELEMENT a_b:c (#PCDATA)>
+
+<!ATTLIST C c:a ID #REQUIRED>
+<!ELEMENT C (c:b)>
+<!ELEMENT c:b (#PCDATA)>
 
 

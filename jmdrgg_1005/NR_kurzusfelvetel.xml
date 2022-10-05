@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<NR_kurzusfelvetel tanev="2022/2023" egyetem="ME" xmlns:xs="https://www.w3.org/2001/XMLSchema-instance" xs:schemaLocation="./NR_kurzusfelvetel.xsd">
+<NR_kurzusfelvetel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="NR_kurzusfelvetel.xsd" tanev="2022/2023 I" egyetem="ME">
   <hallgato id="JMDRGG">
-    <hnev>Nagy Róbert</hnev>
     <szulev>2001-03-20</szulev>
+    <hnev>Nagy Róbert</hnev>
     <szak evf="5">Programtervező informatikus</szak>
   </hallgato>
   <kurzusok>
@@ -28,7 +29,7 @@
       <idopont>Kedd 12:00 - 14:00</idopont>
       <oktato>Dr. Bednarik László</oktato>
     </kurzus>
-    <kurzus id="GEMAK121M">
+    <kurzus id="GEMAK121M" jovahagyva="nem">
       <kurzusnev>Algoritmusok és vizsgálat</kurzusnev>
       <kredit>5</kredit>
       <hely>X</hely>

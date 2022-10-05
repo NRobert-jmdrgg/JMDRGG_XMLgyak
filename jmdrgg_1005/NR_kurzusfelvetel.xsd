@@ -17,7 +17,7 @@
   <xs:simpleType name="idTipus">
     <xs:restriction base="xs:string">
       <xs:minLength value="5"/>
-      <xs:maxLength value="10"/>
+      <xs:maxLength value="15"/>
     </xs:restriction>
   </xs:simpleType>
 
@@ -81,7 +81,7 @@
   <xs:element name="kurzusok">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="kurzus"/>
+        <xs:element ref="kurzus" maxOccurs="unbounded"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>

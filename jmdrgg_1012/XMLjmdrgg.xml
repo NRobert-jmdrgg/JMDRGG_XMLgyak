@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<NR_vendeglatas xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="XMLSchemajmdrgg.xsd" >
+  <etterem ekod="e1">
+    <csillag>2</csillag>
+    <cim>
+      <varos>Miskolc</varos>
+      <utca>Egyetem</utca>
+      <hazszam>42069</hazszam>
+    </cim>
+    <nev>Gasztromuhely</nev>
+  </etterem>
+  <etterem ekod="e2">
+    <csillag>1</csillag>
+    <cim>
+      <varos>Túrkeve</varos>
+      <utca>Kossuth</utca>
+      <hazszam>15</hazszam>
+    </cim>
+    <nev>Keve étterem</nev>
+  </etterem>
+  <etterem ekod="e3">
+    <csillag>4</csillag>
+    <cim>
+      <varos>Tiszafüred</varos>
+      <utca>Fő</utca>
+      <hazszam>8</hazszam>
+    </cim>
+    <nev>Nemzeti étterem</nev>
+  </etterem>
+
+  <foszakacs fkod="f1" e_f="e1">
+    <nev>Carl Brutananadilewski</nev>
+    <eletkor>61</eletkor>
+    <vegzettseg>Érettségi</vegzettseg>
+  </foszakacs>
+  <foszakacs fkod="f2" e_f="e2">
+    <nev>Dean Takahashi</nev>
+    <eletkor>48</eletkor>
+    <vegzettseg>Érettségi</vegzettseg>
+    <vegzettseg>Egyetem</vegzettseg>
+  </foszakacs>
+  <foszakacs fkod="f3" e_f="e3">
+    <nev>Richard Samuel Jordan</nev>
+    <eletkor>32</eletkor>
+    <vegzettseg>Érettségi</vegzettseg>
+    <vegzettseg>Egyetem</vegzettseg>
+    <vegzettseg>Phd</vegzettseg>
+  </foszakacs>
+
+  <vendeg vkod="v1">
+    <nev>Jeb Bush</nev>
+    <eletkor>69</eletkor>
+    <cim>
+      <varos>Midland</varos>
+      <utca>Street</utca>
+      <hazszam>213</hazszam>
+    </cim>
+  </vendeg>
+  <vendeg vkod="v2">
+    <nev>Samir Al-Hajeed</nev>
+    <eletkor>37</eletkor>
+    <cim>
+      <varos>New York</varos>
+      <utca>Greenwich</utca>
+      <hazszam>180</hazszam>
+    </cim>
+  </vendeg>
+  <vendeg vkod="v3">
+    <nev>Mogusa Shirose</nev>
+    <eletkor>26</eletkor>
+    <cim>
+      <varos>Nuuk</varos>
+      <utca>Singoriaq</utca>
+      <hazszam>55</hazszam>
+    </cim>
+  </vendeg>
+
+  <gyakornok gykod="gy1" e_gy="e1">
+    <nev>Dalauan Sparrow</nev>
+    <gyakorlat>
+      <kezdete>2006-06-24</kezdete>
+      <idotartama>5 hónap</idotartama>
+    </gyakorlat>
+    <muszak>Délutáni</muszak>
+  </gyakornok>
+  <gyakornok gykod="gy2" e_gy="e2">
+    <nev>Andrew Jackerry Jacked</nev>
+    <gyakorlat>
+      <kezdete>2019-12-01</kezdete>
+      <idotartama>1 hónap</idotartama>
+    </gyakorlat>
+    <muszak>Esti</muszak>
+    <muszak>Délutáni</muszak>
+  </gyakornok>
+  <gyakornok gykod="gy3" e_gy="e3">
+    <nev>Dick Assman</nev>
+    <gyakorlat>
+      <kezdete>1986-02-14</kezdete>
+      <idotartama>6 hónap</idotartama>
+    </gyakorlat>
+    <muszak>Délelötti</muszak>
+  </gyakornok>
+
+  <szakacs szkod="sz1" e_sz="e3">
+    <nev>Bartos Cs. István</nev>
+    <reszleg>Kóstoló</reszleg>
+    <vegzettseg>Érettségi</vegzettseg>
+    <vegzettseg>Egyetem</vegzettseg>
+  </szakacs>
+  <szakacs szkod="sz2" e_sz="e3">
+    <nev>Kim Il-Sung</nev>
+    <reszleg>Krumpli pucoló</reszleg>
+    <vegzettseg>Érettségi</vegzettseg>
+  </szakacs>
+  <szakacs szkod="sz3" e_sz="e2">
+    <nev>Hannibal Lecter</nev>
+    <reszleg>Daraboló</reszleg>
+    <vegzettseg>Érettségi</vegzettseg>
+    <vegzettseg>Egyetem</vegzettseg>
+    <vegzettseg>Phd</vegzettseg>
+  </szakacs>
+
+  <rendeles e_r="e1" v_r="v1">
+      <osszeg>3100</osszeg>
+      <etel>2 darab akciós menü</etel>
+  </rendeles>
+  <rendeles e_r="e2" v_r="v2">
+      <osszeg>1400</osszeg>
+      <etel>Magyaros bableves</etel>
+  </rendeles>
+  <rendeles e_r="e3" v_r="v3">
+      <osszeg>1600</osszeg>
+      <etel>Húsleves hús nélkül</etel>
+  </rendeles>
+</NR_vendeglatas>

@@ -11,73 +11,72 @@ import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
-
 public class SaxJMDRGG {
 
-	public static void main(String[] args) {
-		try {
-			
-			SAXParserFactory saxParserFactory = SAXParserFactory.newInstance();
+  public static void main(String[] args) {
+    try {
+      SAXParserFactory saxParserFactory = SAXParserFactory.newInstance();
+      SAXParser saxParser = saxParserFactory.newSAXParser();
+      SaxHandler handler = new SaxHandler();
+      saxParser.parse(new File("./NR_kurzusfelvetel.xml"), handler);
+    } catch (ParserConfigurationException | SAXException | IOException e) {
+      e.printStackTrace();
+    }
+  }
 
-			SAXParser saxParser = saxParserFactory.newSAXParser();
+  static class SaxHandler extends DefaultHandler {
+    private int indent = 0;
 
-			SaxHandler handler = new SaxHandler();
+    private String formatAttributes(Attributes attributes) {
+      int attLength = attributes.getLength();
 
-			saxParser.parse(new File("./NR_kurzusfelvetel.xml"), handler);
+      if (attLength == 0) {
+        return "";
+      }
 
-		} catch    (ParserConfigurationException | SAXException | IOException e) {		
-			e.printStackTrace();
-		}
-	}
-	
-	static class SaxHandler extends DefaultHandler{
-		
-		private int indent = 0;
-		
-		private String formatAttributes(Attributes attributes) {
-            int attLength = attributes.getLength();
-            if (attLength == 0) { return ""; }
-            
-            StringBuilder sb = new StringBuilder(", {}");
-            for (int i = 0; i < attLength; i++) {
-                sb.append(attributes.getLocalName(i) + "=" + attributes.getValue(i));
-                if (i < attLength - 1) {
-                    sb.append(", ");
-                }
-            }
-            sb.append("}");
-            return sb.toString();
+      StringBuilder sb = new StringBuilder(", {");
+
+      for (int i = 0; i < attLength; i++) {
+        sb.append(attributes.getLocalName(i) + "=" + attributes.getValue(i));
+        if (i < attLength - 1) {
+          sb.append(", ");
         }
+      }
 
-        private void indent() {
-            for (int i = 0; i < indent; i++) {
-                System.out.println("   ");
-            }
-        }
+      sb.append("}");
 
-        @Override
-        public void startElement(String uri, String localName, String qName, Attributes attributes) {
-            indent();
-            indent--;
-            System.out.println(qName + " end");
-        }
+      return sb.toString();
+    }
 
-        @Override
-        public void endElement(String uri, String localName, String qName) {
-            indent();
-            indent-- ;
-            System.out.println(qName + " end");
-        }
+    private void indent() {
+      for (int i = 0; i < indent; i++) {
+        System.out.print(" ");
+      }
+    }
 
-        @Override
-        public void characters(char ch[], int start, int length) {
-            String chars = new String(ch, start, length).trim();
-            if (!chars.isEmpty()) {
-                indent++;
-                indent();
-                indent--;
-                System.out.println(chars);
-            }
-        }
-	}
+    @Override
+    public void startElement(String uri, String localName, String qName, Attributes attributes) {
+      indent++;
+      indent();
+      System.out.println(qName + formatAttributes(attributes) + " start");
+    }
+
+    @Override
+    public void endElement(String uri, String localName, String qName) {
+      indent();
+      indent--;
+      System.out.println(qName + " end");
+    }
+
+    @Override
+    public void characters(char ch[], int start, int length) {
+      String chars = new String(ch, start, length).trim();
+      if (!chars.isEmpty()) {
+        indent++;
+        indent();
+        indent--;
+        System.out.println(chars);
+      }
+    }
+  }
 }

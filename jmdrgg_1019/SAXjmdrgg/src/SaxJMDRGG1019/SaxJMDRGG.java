@@ -25,7 +25,7 @@ public class SaxJMDRGG {
 
 			saxParser.parse(new File("./NR_kurzusfelvetel.xml"), handler);
 
-		} catch (ParserConfigurationException | SAXException | IOException e) {		
+		} catch    (ParserConfigurationException | SAXException | IOException e) {		
 			e.printStackTrace();
 		}
 	}

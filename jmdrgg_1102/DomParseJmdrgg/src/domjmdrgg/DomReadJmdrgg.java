@@ -1,41 +1,46 @@
 package domjmdrgg;
 
+import java.io.*;
+import javax.xml.parsers.*;
 import org.w3c.dom.*;
 import org.xml.sax.SAXException;
 
-import javax.xml.parsers.*;
-import java.io.*;
-
 public class DomReadJmdrgg {
-  public static void main(String[] args) throws SAXException, IOException, ParserConfigurationException {
-    try {
-      File inputFile = new File("usersJmdrgg.xml");
-      DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
-      DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-      Document doc = dBuilder.parse(inputFile);
-      doc.getDocumentElement().normalize();
-      System.out.println("Root element :" + doc.getDocumentElement().getNodeName());
-      NodeList nList = doc.getElementsByTagName("users");
 
-      for (int i = 0; i < nList.getLength(); i++) {
-        Node nNode = nList.item(i);
-        System.out.println("\nCurrent Element :" + nNode.getNodeName());
+  public static void main(String[] args)
+    throws SAXException, ParserConfigurationException, IOException {
+    DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+    DocumentBuilder builder = factory.newDocumentBuilder();
+    Document doc = builder.parse("./src/domjmdrgg/usersJMDRGG.xml");
 
-        if (nNode.getNodeType() == Node.ELEMENT_NODE) {
-          Element elem = (Element) nNode;
-          String uid = elem.getElementsByTagName("uid").item(i).getTextContent();
-          String fname = elem.getElementsByTagName("firstname").item(i).getTextContent();
-          String lname = elem.getElementsByTagName("lastname").item(i).getTextContent();
-          String pname = elem.getElementsByTagName("profession").item(i).getTextContent();
+    System.out.println(
+      "Root Element: " + doc.getDocumentElement().getNodeName()
+    );
 
-          System.out.println("uid: " + uid);
-          System.out.println("firstname" + fname);
-          System.out.println("lastname" + lname);
-          System.out.println("profession" + pname);
-        }
-      }
-    } catch (Exception e) {
-      e.printStackTrace();
+    NodeList nList = doc.getElementsByTagName("user");
+
+    for (int i = 0; i < nList.getLength(); i++) {
+      System.out.println(
+        "id: " + nList.item(i).getAttributes().getNamedItem("id")
+      );
+      System.out.println(
+        "firstname: " +
+        ((Element) nList.item(i)).getElementsByTagName("firstname")
+          .item(0)
+          .getTextContent()
+      );
+      System.out.println(
+        "lastname: " +
+        ((Element) nList.item(i)).getElementsByTagName("lastname")
+          .item(0)
+          .getTextContent()
+      );
+      System.out.println(
+        "profession: " +
+        ((Element) nList.item(i)).getElementsByTagName("profession")
+          .item(0)
+          .getTextContent()
+      );
     }
   }
 }

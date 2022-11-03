@@ -55,7 +55,8 @@ public class SaxJMDRGG {
     }
 
     @Override
-    public void startElement(String uri, String localName, String qName, Attributes attributes) {
+    public void startElement(String uri, String localName, String qName,
+        Attributes attributes) {
       indent++;
       indent();
       System.out.println(qName + formatAttributes(attributes) + " start");

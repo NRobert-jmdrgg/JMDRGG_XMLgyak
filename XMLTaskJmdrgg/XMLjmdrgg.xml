@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<NR_beadando xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="XMLSchemaJmdrgg.xsd">
+  <vasarlo v_id="v1">
+    <nev>
+      <vezeteknev></vezeteknev>
+      <keresztnev></keresztnev>
+    </nev>
+    <torzsvasarlo></torzsvasarlo>
+    <eletkor></eletkor>
+    <nem></nem>
+  </vasarlo>
+  <vasarlo v_id="v2">
+    <nev>
+      <vezeteknev></vezeteknev>
+      <keresztnev></keresztnev>
+    </nev>
+    <torzsvasarlo></torzsvasarlo>
+    <eletkor></eletkor>
+    <nem></nem>
+  </vasarlo>
+  <vasarlo v_id="v3">
+    <nev>
+      <vezeteknev></vezeteknev>
+      <keresztnev></keresztnev>
+    </nev>
+    <torzsvasarlo></torzsvasarlo>
+    <eletkor></eletkor>
+    <nem></nem>
+  </vasarlo>
+
+  <tranzakcio v_t="v1" s_t="s1">
+    <datum></datum>
+  </tranzakcio>
+  <tranzakcio v_t="v1" s_t="s2">
+    <datum></datum>
+  </tranzakcio>
+  <tranzakcio v_t="v1" s_t="s4">
+    <datum></datum>
+  </tranzakcio>
+  <tranzakcio v_t="v1" s_t="s5">
+    <datum></datum>
+  </tranzakcio>
+  <tranzakcio v_t="v1" s_t="s9">
+    <datum></datum>
+  </tranzakcio>
+  <tranzakcio v_t="v2" s_t="s2">
+    <datum></datum>
+  </tranzakcio>
+  <tranzakcio v_t="v2" s_t="s1">
+    <datum></datum>
+  </tranzakcio>
+  <tranzakcio v_t="v2" s_t="s4">
+    <datum></datum>
+  </tranzakcio>
+  <tranzakcio v_t="v2" s_t="s10">
+    <datum></datum>
+  </tranzakcio>
+  <tranzakcio v_t="v2" s_t="s3">
+    <datum></datum>
+  </tranzakcio>
+  <tranzakcio v_t="v2" s_t="s5">
+    <datum></datum>
+  </tranzakcio>
+  <tranzakcio v_t="v3" s_t="s7">
+    <datum></datum>
+  </tranzakcio>
+  <tranzakcio v_t="v3" s_t="s8">
+    <datum></datum>
+  </tranzakcio>
+  <tranzakcio v_t="v3" s_t="s9">
+    <datum></datum>
+  </tranzakcio>
+  <tranzakcio v_t="v3" s_t="s10">
+    <datum></datum>
+  </tranzakcio>
+  <tranzakcio v_t="v3" s_t="s2">
+    <datum></datum>
+  </tranzakcio>
+  <tranzakcio v_t="v3" s_t="s4">
+    <datum></datum>
+  </tranzakcio>
+  <tranzakcio v_t="v3" s_t="s3">
+    <datum></datum>
+  </tranzakcio>
+
+  <sutemeny s_id="s1" s_sl="sl1">
+    <nev></nev>
+    <ar></ar>
+    <tulajdonsag></tulajdonsag>
+    <kaloria></kaloria>
+  </sutemeny>
+  <sutemeny s_id="s2" s_sl="sl1">
+    <nev></nev>
+    <ar></ar>
+    <tulajdonsag></tulajdonsag>
+    <kaloria></kaloria>
+  </sutemeny>
+  <sutemeny s_id="s3" s_sl="sl1">
+    <nev></nev>
+    <ar></ar>
+    <tulajdonsag></tulajdonsag>
+    <kaloria></kaloria>
+  </sutemeny>
+  <sutemeny s_id="s4" s_sl="sl1">
+    <nev></nev>
+    <ar></ar>
+    <tulajdonsag></tulajdonsag>
+    <kaloria></kaloria>
+  </sutemeny>
+  <sutemeny s_id="s5" s_sl="sl2">
+    <nev></nev>
+    <ar></ar>
+    <tulajdonsag></tulajdonsag>
+    <kaloria></kaloria>
+  </sutemeny>
+  <sutemeny s_id="s6" s_sl="sl2">
+    <nev></nev>
+    <ar></ar>
+    <tulajdonsag></tulajdonsag>
+    <kaloria></kaloria>
+  </sutemeny>
+  <sutemeny s_id="s7" s_sl="sl2">
+    <nev></nev>
+    <ar></ar>
+    <tulajdonsag></tulajdonsag>
+    <kaloria></kaloria>
+  </sutemeny>
+  <sutemeny s_id="s8" s_sl="sl3">
+    <nev></nev>
+    <ar></ar>
+    <tulajdonsag></tulajdonsag>
+    <kaloria></kaloria>
+  </sutemeny>
+  <sutemeny s_id="s9" s_sl="sl3">
+    <nev></nev>
+    <ar></ar>
+    <tulajdonsag></tulajdonsag>
+    <kaloria></kaloria>
+  </sutemeny>
+  <sutemeny s_id="s10" s_sl="sl3">
+    <nev></nev>
+    <ar></ar>
+    <tulajdonsag></tulajdonsag>
+    <kaloria></kaloria>
+  </sutemeny>
+
+  <sutemeny_lista sl_id="sl1" sl_c="c1">
+    <legnepszerubb></legnepszerubb>
+    <legnepszerutlenebb></legnepszerutlenebb>
+    <legutobb_frissitve></legutobb_frissitve>
+  </sutemeny_lista>
+  <sutemeny_lista sl_id="sl2" sl_c="c2">
+    <legnepszerubb></legnepszerubb>
+    <legnepszerutlenebb></legnepszerutlenebb>
+    <legutobb_frissitve></legutobb_frissitve>
+  </sutemeny_lista>
+  <sutemeny_lista sl_id="sl3" sl_c="c3">
+    <legnepszerubb></legnepszerubb>
+    <legnepszerutlenebb></legnepszerutlenebb>
+    <legutobb_frissitve></legutobb_frissitve>
+  </sutemeny_lista>
+
+  <cukraszda c_id="c1">
+    <nev></nev>
+    <hely>
+      <varos></varos>
+      <utca></utca>
+      <hazszam></hazszam>
+    </hely>
+    <ertekeles></ertekeles>
+    <tulajdonos></tulajdonos>
+    <weboldal></weboldal>
+  </cukraszda>
+  <cukraszda c_id="c2">
+    <nev></nev>
+    <hely>
+      <varos></varos>
+      <utca></utca>
+      <hazszam></hazszam>
+    </hely>
+    <ertekeles></ertekeles>
+    <tulajdonos></tulajdonos>
+    <weboldal></weboldal>
+  </cukraszda>
+  <cukraszda c_id="c3">
+    <nev></nev>
+    <hely>
+      <varos></varos>
+      <utca></utca>
+      <hazszam></hazszam>
+    </hely>
+    <ertekeles></ertekeles>
+    <tulajdonos></tulajdonos>
+    <weboldal></weboldal>
+  </cukraszda>
+
+  <cukrasz cu_id="cu1" cu_c="c4">
+    <nev>
+      <vezeteknev></vezeteknev>
+      <keresztnev></keresztnev>
+    </nev>
+    <eletkor></eletkor>
+    <nem></nem>
+  </cukrasz>
+  <cukrasz cu_id="cu2" cu_c="c1">
+    <nev>
+      <vezeteknev></vezeteknev>
+      <keresztnev></keresztnev>
+    </nev>
+    <eletkor></eletkor>
+    <nem></nem>
+  </cukrasz>
+  <cukrasz cu_id="cu3" cu_c="c1">
+    <nev>
+      <vezeteknev></vezeteknev>
+      <keresztnev></keresztnev>
+    </nev>
+    <eletkor></eletkor>
+    <nem></nem>
+  </cukrasz>
+  <cukrasz cu_id="cu4" cu_c="c2">
+    <nev>
+      <vezeteknev></vezeteknev>
+      <keresztnev></keresztnev>
+    </nev>
+    <eletkor></eletkor>
+    <nem></nem>
+  </cukrasz>
+  <cukrasz cu_id="cu5" cu_c="c2">
+    <nev>
+      <vezeteknev></vezeteknev>
+      <keresztnev></keresztnev>
+    </nev>
+    <eletkor></eletkor>
+    <nem></nem>
+  </cukrasz>
+  <cukrasz cu_id="cu6" cu_c="c2">
+    <nev>
+      <vezeteknev></vezeteknev>
+      <keresztnev></keresztnev>
+    </nev>
+    <eletkor></eletkor>
+    <nem></nem>
+  </cukrasz>
+  <cukrasz cu_id="cu7" cu_c="c3">
+    <nev>
+      <vezeteknev></vezeteknev>
+      <keresztnev></keresztnev>
+    </nev>
+    <eletkor></eletkor>
+    <nem></nem>
+  </cukrasz>
+  <cukrasz cu_id="cu8" cu_c="c3">
+    <nev>
+      <vezeteknev></vezeteknev>
+      <keresztnev></keresztnev>
+    </nev>
+    <eletkor></eletkor>
+    <nem></nem>
+  </cukrasz>
+  <cukrasz cu_id="cu9" cu_c="c3">
+    <nev>
+      <vezeteknev></vezeteknev>
+      <keresztnev></keresztnev>
+    </nev>
+    <eletkor></eletkor>
+    <nem></nem>
+  </cukrasz>
+</NR_beadando>

@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <!-- egyszeru tipusok -->
+  <xs:simpleType name="torzsvasarlo_type">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="igen"></xs:enumeration>
+      <xs:enumeration value="nem"></xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="eletkor_type">
+    <xs:restriction base="xs:int">
+      <xs:minExclusive value="0" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="nem_type">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="nő" />
+      <xs:enumeration value="férfi" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="ar_type">
+    <xs:restriction base="xs:int">
+      <xs:minExclusive value="0" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="kaloria_type">
+    <xs:restriction base="xs:int">
+      <xs:minExclusive value="0" />
+      <xs:maxInclusive value="4000" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="ertekeles_type">
+    <xs:restriction base="xs:float">
+      <xs:minInclusive value="1" />
+      <xs:maxInclusive value="10" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="weboldal_type">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z]{1,6}" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- attributumok -->
+  <xs:attribute name="v_id" type="xs:string" />
+  <xs:attribute name="v_t" type="xs:string" />
+  <xs:attribute name="s_t" type="xs:string" />
+  <xs:attribute name="s_id" type="xs:string" />
+  <xs:attribute name="s_sl" type="xs:string" />
+  <xs:attribute name="sl_id" type="xs:string" />
+  <xs:attribute name="sl_c" type="xs:string" />
+  <xs:attribute name="c_id" type="xs:string" />
+  <xs:attribute name="cu_id" type="xs:string" />
+  <xs:attribute name="cu_c" type="xs:string" />
+
+  <!-- egyszeru egyedek -->
+  <xs:element name="keresznev" type="xs:string" />
+  <xs:element name="vezeteknev" type="xs:string" />
+  <xs:element name="torzsvasarlo" type="torzsvasarlo_type" default="nem" />
+  <xs:element name="eletkor" type="eletkor_type" />
+  <xs:element name="nem" type="nem_type" default="nő" />
+  <xs:element name="datum" type="xs:date" />
+  <xs:element name="ar" type="ar_type" />
+  <xs:element name="tulajdonsag" type="xs:string" />
+  <xs:element name="kaloria" type="kaloria_type" />
+  <xs:element name="nev" type="xs:string" />
+  <xs:element name="varos" type="xs:string" />
+  <xs:element name="utca" type="xs:string" />
+  <xs:element name="hazszam" type="xs:string" />
+  <xs:element name="legnepszerubb" type=" xs:string" />
+  <xs:element name="legnepszerutlenebb" type=" xs:string" />
+  <xs:element name="legutobb_frissitve" type=" xs:date" />
+  <xs:element name="ertekeles" type=" ertekeles_type" />
+  <xs:element name="tulajdonos" type=" xs:string" />
+  <xs:element name="weboldal" type=" weboldal_type" />
+
+  <!-- komplex tipusok -->
+  <xs:complexType name="nev_type">
+    <xs:all>
+      <xs:element ref="keresznev" />
+      <xs:element ref="vezeteknev" />
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="hely_type">
+    <xs:all>
+      <xs:element ref="varos" />
+      <xs:element ref="utca" />
+      <xs:element ref="hazszam" />
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="vasarlo_type">
+    <xs:all>
+      <xs:element name="nev" type="nev_type" />
+      <xs:element ref="torzsvasarlo" />
+      <xs:element ref="eletkor" />
+      <xs:element ref="nem" />
+    </xs:all>
+    <xs:attribute ref="v_id" use="required" />
+  </xs:complexType>
+
+  <xs:complexType name="tranzakcio_type">
+    <xs:all>
+      <xs:element ref="datum" />
+    </xs:all>
+    <xs:attribute ref="v_t" />
+    <xs:attribute ref="s_t" />
+  </xs:complexType>
+
+  <xs:complexType name="sutemeny_type">
+    <xs:sequence>
+      <xs:element ref="nev" />
+      <xs:element ref="ar" />
+      <xs:element ref="kaloria" />
+      <xs:element ref="tulajdonsag" maxOccurs="unbounded" />
+    </xs:sequence>
+    <xs:attribute ref="s_id" use="required" />
+    <xs:attribute ref="s_sl" />
+  </xs:complexType>
+
+  <xs:complexType name="sutemeny_lista_type">
+    <xs:all>
+      <xs:element ref="legnepszerubb" />
+      <xs:element ref="legnepszerutlenebb" />
+      <xs:element ref="legutobb_frissitve" minOccurs="1" />
+    </xs:all>
+    <xs:attribute ref="sl_id" use="required" />
+    <xs:attribute ref="sl_c" />
+  </xs:complexType>
+
+  <xs:complexType name="cukraszda_type">
+    <xs:all>
+      <xs:element name="hely" type="hely_type" minOccurs="1" />
+      <xs:element ref="nev" minOccurs="1" />
+      <xs:element ref="ertekeles" />
+      <xs:element ref="tulajdonos" />
+      <xs:element ref="weboldal" />
+    </xs:all>
+    <xs:attribute ref="c_id" use="required" />
+  </xs:complexType>
+
+  <xs:complexType name="cukrasz_type">
+    <xs:all>
+      <xs:element name="nev" type="nev_type" minOccurs="1" />
+      <xs:element ref="eletkor" />
+      <xs:element ref="nem" />
+    </xs:all>
+    <xs:attribute ref="cu_id" use="required" />
+    <xs:attribute ref="cu_c" />
+  </xs:complexType>
+
+  <!-- root -->
+  <xs:element name="NR_beadando">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="vasarlo" type="vasarlo_type" maxOccurs="unbounded" />
+        <xs:element name="sutemeny" type="sutemeny_type" maxOccurs="unbounded" />
+        <xs:element name="tranzakcio" type="tranzakcio_type" maxOccurs="unbounded" />
+        <xs:element name="sutemeny_lista" type="sutemeny_lista_type" maxOccurs="unbounded" />
+        <xs:element name="cukraszda" type="cukraszda_type" maxOccurs="unbounded" />
+        <xs:element name="cukrasz" type="cukrasz_type" maxOccurs="unbounded" />
+      </xs:sequence>
+    </xs:complexType>
+    <!-- kulcsok -->
+    <xs:key name="vasarlo_key">
+      <xs:selector xpath="vasarlo" />
+      <xs:field xpath="@v_id" />
+    </xs:key>
+    <xs:key name="sutemeny_key">
+      <xs:selector xpath="sutemeny" />
+      <xs:field xpath="@s_id" />
+    </xs:key>
+    <xs:key name="sutemeny_lista_key">
+      <xs:selector xpath="sutemeny_lista" />
+      <xs:field xpath="@sl_id" />
+    </xs:key>
+    <xs:key name="cukraszda_key">
+      <xs:selector xpath="cukraszda" />
+      <xs:field xpath="@c_id" />
+    </xs:key>
+    <xs:key name="cukrasz_key">
+      <xs:selector xpath="cukrasz" />
+      <xs:field xpath="@cu_id" />
+    </xs:key>
+    <!-- idegen kulcsok -->
+    <xs:keyref refer="vasarlo_key" name="vasarlo_tranzakcio_key">
+      <xs:selector xpath="vasarlo" />
+      <xs:field xpath="@v_t" />
+    </xs:keyref>
+    <xs:keyref refer="sutemeny_key" name="sutemeny_tranzakcio_key">
+      <xs:selector xpath="sutemeny" />
+      <xs:field xpath="@s_t" />
+    </xs:keyref>
+    <xs:keyref refer="sutemeny_lista_key" name="sutemeny_sutemeny_lista_key">
+      <xs:selector xpath="sutemeny_lista" />
+      <xs:field xpath="@s_sl" />
+    </xs:keyref>
+    <xs:keyref refer="cukraszda_key" name="sutemeny_lista_cukraszda_key">
+      <xs:selector xpath="cukraszda" />
+      <xs:field xpath="@sl_c" />
+    </xs:keyref>
+    <xs:keyref refer="cukrasz_key" name="cukrasz_cukraszda_key">
+      <xs:selector xpath="cukraszda" />
+      <xs:field xpath="@cu_c" />
+    </xs:keyref>
+  </xs:element>
+
+
+</xs:schema>

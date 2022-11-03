@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<users xmlns="domjmdrgg">
+  <user id="1">
+    <firstname>Róbert</firstname>
+    <lastname>Nagy</lastname>
+    <profession>Student</profession>
+  </user>
+  <user id="2">
+    <firstname>Karcsi</firstname>
+    <lastname>Pista</lastname>
+    <profession>Munkanélküli</profession>
+  </user>
+  <user id="3">
+    <firstname>Tamás</firstname>
+    <lastname>Zucc</lastname>
+    <profession>Programozó</profession>
+  </user>
+</users>

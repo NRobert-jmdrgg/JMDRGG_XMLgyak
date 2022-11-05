@@ -10,8 +10,7 @@ public class DomReadJmdrgg {
   private final String filename = "./XMLjmdrgg.xml";
   private final DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 
-  private void printCukraszdak(Document doc)
-    throws SAXException, ParserConfigurationException, IOException {
+  private void printCukraszdak(Document doc) {
     System.out.println("Cukrászdák: ");
 
     NodeList cukraszdak = doc.getElementsByTagName("cukraszda");
@@ -47,8 +46,7 @@ public class DomReadJmdrgg {
     }
   }
 
-  private void printCukrasz(Document doc)
-    throws SAXException, ParserConfigurationException, IOException {
+  private void printCukrasz(Document doc) {
     System.out.println("Cukrászok: ");
 
     NodeList cukraszok = doc.getElementsByTagName("cukrasz");
@@ -76,8 +74,7 @@ public class DomReadJmdrgg {
     }
   }
 
-  private void printSutemenyLista(Document doc)
-    throws SAXException, ParserConfigurationException, IOException {
+  private void printSutemenyLista(Document doc) {
     System.out.println("Sütemény listák: ");
 
     NodeList sutemenyListak = doc.getElementsByTagName("sutemeny_lista");
@@ -104,8 +101,7 @@ public class DomReadJmdrgg {
     }
   }
 
-  private void printSutemeny(Document doc)
-    throws SAXException, ParserConfigurationException, IOException {
+  private void printSutemeny(Document doc) {
     System.out.println("Sütemények: ");
 
     NodeList sutemenyek = doc.getElementsByTagName("sutemeny");
@@ -139,8 +135,7 @@ public class DomReadJmdrgg {
     }
   }
 
-  private void printVasarlo(Document doc)
-    throws SAXException, ParserConfigurationException, IOException {
+  private void printVasarlo(Document doc) {
     System.out.println("Vásárlók: ");
 
     NodeList vasarlok = doc.getElementsByTagName("vasarlo");
@@ -173,8 +168,7 @@ public class DomReadJmdrgg {
     }
   }
 
-  private void printTranzakcio(Document doc)
-    throws SAXException, ParserConfigurationException, IOException {
+  private void printTranzakcio(Document doc) {
     System.out.println("Tranzakciók: ");
 
     NodeList tranzakciok = doc.getElementsByTagName("tranzakcio");

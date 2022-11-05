@@ -61,7 +61,7 @@
   <xs:attribute name="cu_c" type="xs:string" />
 
   <!-- egyszeru egyedek -->
-  <xs:element name="keresznev" type="xs:string" />
+  <xs:element name="keresztnev" type="xs:string" />
   <xs:element name="vezeteknev" type="xs:string" />
   <xs:element name="torzsvasarlo" type="torzsvasarlo_type" default="nem" />
   <xs:element name="eletkor" type="eletkor_type" />
@@ -84,7 +84,7 @@
   <!-- komplex tipusok -->
   <xs:complexType name="nev_type">
     <xs:all>
-      <xs:element ref="keresznev" />
+      <xs:element ref="keresztnev" />
       <xs:element ref="vezeteknev" />
     </xs:all>
   </xs:complexType>

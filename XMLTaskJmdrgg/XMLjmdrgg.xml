@@ -1,34 +1,130 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<NR_beadando xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:noNamespaceSchemaLocation="XMLSchemaJmdrgg.xsd">
-  <vasarlo v_id="v1">
+<NR_beadando xsi:noNamespaceSchemaLocation="XMLSchemaJmdrgg.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+  <cukraszda c_id="c1">
+    <nev>Daubner Cukrászda</nev>
+    <hely>
+      <varos>Budapest</varos>
+      <utca>Szépvölgyi </utca>
+      <hazszam>50</hazszam>
+    </hely>
+    <ertekeles>4.3</ertekeles>
+    <tulajdonos>Pista Laci</tulajdonos>
+    <weboldal>daubnercukraszda.hu</weboldal>
+  </cukraszda>
+  <cukraszda c_id="c2">
+    <nev>Frey Cukrászda</nev>
+    <hely>
+      <varos>Pécs</varos>
+      <utca>Hungária</utca>
+      <hazszam>53/1</hazszam>
+    </hely>
+    <ertekeles>4.7</ertekeles>
+    <tulajdonos>Rotyis Bálint</tulajdonos>
+    <weboldal>freycukraszda.hu</weboldal>
+  </cukraszda>
+  <cukraszda c_id="c3">
+    <nev>Szűőke cukrászda</nev>
+    <hely>
+      <varos>Debrecen</varos>
+      <utca>Úrrétje</utca>
+      <hazszam>14</hazszam>
+    </hely>
+    <ertekeles>4.5</ertekeles>
+    <tulajdonos>Szőke Balázs</tulajdonos>
+    <weboldal>szokecukraszda.hu</weboldal>
+  </cukraszda>
+
+  <cukrasz cu_id="cu1" cu_c="c1">
+    <nev>
+      <vezeteknev>Tompa</vezeteknev>
+      <keresztnev>Tamás</keresztnev>
+    </nev>
+    <eletkor>57</eletkor>
+    <nem>férfi</nem>
+  </cukrasz>
+  <cukrasz cu_id="cu2" cu_c="c1">
+    <nev>
+      <vezeteknev>Patkós</vezeteknev>
+      <keresztnev>Petra</keresztnev>
+    </nev>
+    <eletkor>21</eletkor>
+    <nem>nő</nem>
+  </cukrasz>
+  <cukrasz cu_id="cu3" cu_c="c1">
     <nev>
       <vezeteknev>Nagy</vezeteknev>
-      <keresztnev>Róbert</keresztnev>
+      <keresztnev>Bence</keresztnev>
     </nev>
-    <torzsvasarlo>igen</torzsvasarlo>
+    <eletkor>18</eletkor>
+    <nem>férfi</nem>
+  </cukrasz>
+  <cukrasz cu_id="cu4" cu_c="c2">
+    <nev>
+      <vezeteknev>Szabó</vezeteknev>
+      <keresztnev>Bence</keresztnev>
+    </nev>
     <eletkor>21</eletkor>
     <nem>férfi</nem>
-  </vasarlo>
-  <vasarlo v_id="v2">
+  </cukrasz>
+  <cukrasz cu_id="cu5" cu_c="c2">
     <nev>
-      <vezeteknev>Sándor</vezeteknev>
-      <keresztnev>Béla</keresztnev>
+      <vezeteknev>Mathers</vezeteknev>
+      <keresztnev>Marshall</keresztnev>
     </nev>
-    <torzsvasarlo>nem</torzsvasarlo>
-    <eletkor>26</eletkor>
-    <nem>nő</nem>
-  </vasarlo>
-  <vasarlo v_id="v3">
-    <nev>
-      <vezeteknev>Ferenc</vezeteknev>
-      <keresztnev>Viktor</keresztnev>
-    </nev>
-    <torzsvasarlo>nem</torzsvasarlo>
-    <eletkor>56</eletkor>
+    <eletkor>50</eletkor>
     <nem>férfi</nem>
-  </vasarlo>
+  </cukrasz>
+  <cukrasz cu_id="cu6" cu_c="c2">
+    <nev>
+      <vezeteknev>Jepsen</vezeteknev>
+      <keresztnev>Carly</keresztnev>
+    </nev>
+    <eletkor>36</eletkor>
+    <nem>nő</nem>
+  </cukrasz>
+  <cukrasz cu_id="cu7" cu_c="c3">
+    <nev>
+      <vezeteknev>Snake</vezeteknev>
+      <keresztnev>David</keresztnev>
+    </nev>
+    <eletkor>24</eletkor>
+    <nem>férfi</nem>
+  </cukrasz>
+  <cukrasz cu_id="cu8" cu_c="c3">
+    <nev>
+      <vezeteknev>McMillen</vezeteknev>
+      <keresztnev>Edmund</keresztnev>
+    </nev>
+    <eletkor>42</eletkor>
+    <nem>férfi</nem>
+  </cukrasz>
+  <cukrasz cu_id="cu9" cu_c="c3">
+    <nev>
+      <vezeteknev>Fors</vezeteknev>
+      <keresztnev>Sebastian</keresztnev>
+    </nev>
+    <eletkor>31</eletkor>
+    <nem>férfi</nem>
+  </cukrasz>
+
+  <sutemeny_lista sl_id="sl1" sl_c="c1">
+    <legnepszerubb>Mignon</legnepszerubb>
+    <legnepszerutlenebb>Almás pite</legnepszerutlenebb>
+    <legutobb_frissitve>2022-04-26</legutobb_frissitve>
+  </sutemeny_lista>
+  <sutemeny_lista sl_id="sl2" sl_c="c2">
+    <legnepszerubb>Képviselőfánk</legnepszerubb>
+    <legnepszerutlenebb>Piskótatekercs</legnepszerutlenebb>
+    <legutobb_frissitve>2022-06-22</legutobb_frissitve>
+  </sutemeny_lista>
+  <sutemeny_lista sl_id="sl3" sl_c="c3">
+    <legnepszerubb>Joghurtos epertorta szelet</legnepszerubb>
+    <legnepszerutlenebb>Somlói galuska</legnepszerutlenebb>
+    <legutobb_frissitve>2022-03-20</legutobb_frissitve>
+  </sutemeny_lista>
+
 
   <sutemeny s_id="s1" s_sl="sl1">
     <nev>Almás pite</nev>
@@ -130,6 +226,34 @@
     <tulajdonsag>tejszínhabos</tulajdonsag>
   </sutemeny>
 
+  <vasarlo v_id="v1">
+    <nev>
+      <vezeteknev>Nagy</vezeteknev>
+      <keresztnev>Róbert</keresztnev>
+    </nev>
+    <torzsvasarlo>igen</torzsvasarlo>
+    <eletkor>21</eletkor>
+    <nem>férfi</nem>
+  </vasarlo>
+  <vasarlo v_id="v2">
+    <nev>
+      <vezeteknev>Sándor</vezeteknev>
+      <keresztnev>Béla</keresztnev>
+    </nev>
+    <torzsvasarlo>nem</torzsvasarlo>
+    <eletkor>26</eletkor>
+    <nem>nő</nem>
+  </vasarlo>
+  <vasarlo v_id="v3">
+    <nev>
+      <vezeteknev>Ferenc</vezeteknev>
+      <keresztnev>Viktor</keresztnev>
+    </nev>
+    <torzsvasarlo>nem</torzsvasarlo>
+    <eletkor>56</eletkor>
+    <nem>férfi</nem>
+  </vasarlo>
+
   <tranzakcio v_t="v1" s_t="s1">
     <datum>2022-03-20</datum>
   </tranzakcio>
@@ -154,7 +278,7 @@
   <tranzakcio v_t="v2" s_t="s4">
     <datum>2022-05-02</datum>
   </tranzakcio>
-  <tranzakcio v_t="v2" s_t="s10">
+  <tranzakcio v_t="v2" s_t="s1">
     <datum>2022-09-11</datum>
   </tranzakcio>
   <tranzakcio v_t="v2" s_t="s3">
@@ -184,128 +308,4 @@
   <tranzakcio v_t="v3" s_t="s3">
     <datum>2022-11-02</datum>
   </tranzakcio>
-
-
-  <sutemeny_lista sl_id="sl1" sl_c="c1">
-    <legnepszerubb>Mignon</legnepszerubb>
-    <legnepszerutlenebb>Almás pite</legnepszerutlenebb>
-    <legutobb_frissitve>2022-04-26</legutobb_frissitve>
-  </sutemeny_lista>
-  <sutemeny_lista sl_id="sl2" sl_c="c2">
-    <legnepszerubb>Képviselőfánk</legnepszerubb>
-    <legnepszerutlenebb>Piskótatekercs</legnepszerutlenebb>
-    <legutobb_frissitve>2022-06-22</legutobb_frissitve>
-  </sutemeny_lista>
-  <sutemeny_lista sl_id="sl3" sl_c="c3">
-    <legnepszerubb>Joghurtos epertorta szelet</legnepszerubb>
-    <legnepszerutlenebb>Somlói galuska</legnepszerutlenebb>
-    <legutobb_frissitve>2022-03-20</legutobb_frissitve>
-  </sutemeny_lista>
-
-  <cukraszda c_id="c1">
-    <nev>Daubner Cukrászda</nev>
-    <hely>
-      <varos>Budapest</varos>
-      <utca>Szépvölgyi </utca>
-      <hazszam>50</hazszam>
-    </hely>
-    <ertekeles>4.3</ertekeles>
-    <tulajdonos>Pista Laci</tulajdonos>
-    <weboldal>daubnercukraszda.hu</weboldal>
-  </cukraszda>
-  <cukraszda c_id="c2">
-    <nev>Frey Cukrászda</nev>
-    <hely>
-      <varos>Pécs</varos>
-      <utca>Hungária</utca>
-      <hazszam>53/1</hazszam>
-    </hely>
-    <ertekeles>4.7</ertekeles>
-    <tulajdonos>Rotyis Bálint</tulajdonos>
-    <weboldal>freycukraszda.hu</weboldal>
-  </cukraszda>
-  <cukraszda c_id="c3">
-    <nev>Szűőke cukrászda</nev>
-    <hely>
-      <varos>Debrecen</varos>
-      <utca>Úrrétje</utca>
-      <hazszam>14</hazszam>
-    </hely>
-    <ertekeles>4.5</ertekeles>
-    <tulajdonos>Szőke Balázs</tulajdonos>
-    <weboldal>szokecukraszda.hu</weboldal>
-  </cukraszda>
-
-  <cukrasz cu_id="cu1" cu_c="c4">
-    <nev>
-      <vezeteknev>Tompa</vezeteknev>
-      <keresztnev>Tamás</keresztnev>
-    </nev>
-    <eletkor>57</eletkor>
-    <nem>férfi</nem>
-  </cukrasz>
-  <cukrasz cu_id="cu2" cu_c="c1">
-    <nev>
-      <vezeteknev>Patkós</vezeteknev>
-      <keresztnev>Petra</keresztnev>
-    </nev>
-    <eletkor>21</eletkor>
-    <nem>nő</nem>
-  </cukrasz>
-  <cukrasz cu_id="cu3" cu_c="c1">
-    <nev>
-      <vezeteknev>Nagy</vezeteknev>
-      <keresztnev>Bence</keresztnev>
-    </nev>
-    <eletkor>18</eletkor>
-    <nem>férfi</nem>
-  </cukrasz>
-  <cukrasz cu_id="cu4" cu_c="c2">
-    <nev>
-      <vezeteknev></vezeteknev>
-      <keresztnev></keresztnev>
-    </nev>
-    <eletkor></eletkor>
-    <nem></nem>
-  </cukrasz>
-  <cukrasz cu_id="cu5" cu_c="c2">
-    <nev>
-      <vezeteknev>Mathers</vezeteknev>
-      <keresztnev>Marshall</keresztnev>
-    </nev>
-    <eletkor>50</eletkor>
-    <nem>férfi</nem>
-  </cukrasz>
-  <cukrasz cu_id="cu6" cu_c="c2">
-    <nev>
-      <vezeteknev>Jepsen</vezeteknev>
-      <keresztnev>Carly</keresztnev>
-    </nev>
-    <eletkor>36</eletkor>
-    <nem>nő</nem>
-  </cukrasz>
-  <cukrasz cu_id="cu7" cu_c="c3">
-    <nev>
-      <vezeteknev>Snake</vezeteknev>
-      <keresztnev>David</keresztnev>
-    </nev>
-    <eletkor>24</eletkor>
-    <nem>férfi</nem>
-  </cukrasz>
-  <cukrasz cu_id="cu8" cu_c="c3">
-    <nev>
-      <vezeteknev>McMillen</vezeteknev>
-      <keresztnev>Edmund</keresztnev>
-    </nev>
-    <eletkor>42</eletkor>
-    <nem>férfi</nem>
-  </cukrasz>
-  <cukrasz cu_id="cu9" cu_c="c3">
-    <nev>
-      <vezeteknev>Fors</vezeteknev>
-      <keresztnev>Sebastian</keresztnev>
-    </nev>
-    <eletkor>31</eletkor>
-    <nem>férfi</nem>
-  </cukrasz>
 </NR_beadando>

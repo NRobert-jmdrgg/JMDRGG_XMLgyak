@@ -49,16 +49,16 @@
   </xs:simpleType>
 
   <!-- attributumok -->
-  <xs:attribute name="v_id" type="xs:string" />
-  <xs:attribute name="v_t" type="xs:string" />
-  <xs:attribute name="s_t" type="xs:string" />
-  <xs:attribute name="s_id" type="xs:string" />
-  <xs:attribute name="s_sl" type="xs:string" />
-  <xs:attribute name="sl_id" type="xs:string" />
-  <xs:attribute name="sl_c" type="xs:string" />
-  <xs:attribute name="c_id" type="xs:string" />
-  <xs:attribute name="cu_id" type="xs:string" />
-  <xs:attribute name="cu_c" type="xs:string" />
+  <xs:attribute name="v_id" type="xs:NCName" />
+  <xs:attribute name="v_t" type="xs:NCName" />
+  <xs:attribute name="s_t" type="xs:NCName" />
+  <xs:attribute name="s_id" type="xs:NCName" />
+  <xs:attribute name="s_sl" type="xs:NCName" />
+  <xs:attribute name="sl_id" type="xs:NCName" />
+  <xs:attribute name="sl_c" type="xs:NCName" />
+  <xs:attribute name="c_id" type="xs:NCName" />
+  <xs:attribute name="cu_id" type="xs:NCName" />
+  <xs:attribute name="cu_c" type="xs:NCName" />
 
   <!-- egyszeru egyedek -->
   <xs:element name="keresztnev" type="xs:string" />
@@ -83,36 +83,36 @@
 
   <!-- komplex tipusok -->
   <xs:complexType name="nev_type">
-    <xs:all>
-      <xs:element ref="keresztnev" />
+    <xs:sequence>
       <xs:element ref="vezeteknev" />
-    </xs:all>
+      <xs:element ref="keresztnev" />
+    </xs:sequence>
   </xs:complexType>
 
   <xs:complexType name="hely_type">
-    <xs:all>
+    <xs:sequence>
       <xs:element ref="varos" />
       <xs:element ref="utca" />
       <xs:element ref="hazszam" />
-    </xs:all>
+    </xs:sequence>
   </xs:complexType>
 
   <xs:complexType name="vasarlo_type">
-    <xs:all>
+    <xs:sequence>
       <xs:element name="nev" type="nev_type" />
       <xs:element ref="torzsvasarlo" />
       <xs:element ref="eletkor" />
       <xs:element ref="nem" />
-    </xs:all>
+    </xs:sequence>
     <xs:attribute ref="v_id" use="required" />
   </xs:complexType>
 
   <xs:complexType name="tranzakcio_type">
-    <xs:all>
+    <xs:sequence>
       <xs:element ref="datum" />
-    </xs:all>
-    <xs:attribute ref="v_t" />
-    <xs:attribute ref="s_t" />
+    </xs:sequence>
+    <xs:attribute ref="v_t" use="required" />
+    <xs:attribute ref="s_t" use="required" />
   </xs:complexType>
 
   <xs:complexType name="sutemeny_type">
@@ -123,95 +123,98 @@
       <xs:element ref="tulajdonsag" maxOccurs="unbounded" />
     </xs:sequence>
     <xs:attribute ref="s_id" use="required" />
-    <xs:attribute ref="s_sl" />
+    <xs:attribute ref="s_sl" use="required" />
   </xs:complexType>
 
   <xs:complexType name="sutemeny_lista_type">
-    <xs:all>
+    <xs:sequence>
       <xs:element ref="legnepszerubb" />
       <xs:element ref="legnepszerutlenebb" />
       <xs:element ref="legutobb_frissitve" minOccurs="1" />
-    </xs:all>
+    </xs:sequence>
     <xs:attribute ref="sl_id" use="required" />
-    <xs:attribute ref="sl_c" />
+    <xs:attribute ref="sl_c" use="required" />
   </xs:complexType>
 
   <xs:complexType name="cukraszda_type">
-    <xs:all>
-      <xs:element name="hely" type="hely_type" minOccurs="1" />
+    <xs:sequence>
       <xs:element ref="nev" minOccurs="1" />
+      <xs:element name="hely" type="hely_type" minOccurs="1" />
       <xs:element ref="ertekeles" />
       <xs:element ref="tulajdonos" />
       <xs:element ref="weboldal" />
-    </xs:all>
+    </xs:sequence>
     <xs:attribute ref="c_id" use="required" />
   </xs:complexType>
 
   <xs:complexType name="cukrasz_type">
-    <xs:all>
+    <xs:sequence>
       <xs:element name="nev" type="nev_type" minOccurs="1" />
       <xs:element ref="eletkor" />
       <xs:element ref="nem" />
-    </xs:all>
+    </xs:sequence>
     <xs:attribute ref="cu_id" use="required" />
-    <xs:attribute ref="cu_c" />
+    <xs:attribute ref="cu_c" use="required" />
   </xs:complexType>
 
   <!-- root -->
   <xs:element name="NR_beadando">
     <xs:complexType>
       <xs:sequence>
-        <xs:element name="vasarlo" type="vasarlo_type" maxOccurs="unbounded" />
-        <xs:element name="sutemeny" type="sutemeny_type" maxOccurs="unbounded" />
-        <xs:element name="tranzakcio" type="tranzakcio_type" maxOccurs="unbounded" />
-        <xs:element name="sutemeny_lista" type="sutemeny_lista_type" maxOccurs="unbounded" />
-        <xs:element name="cukraszda" type="cukraszda_type" maxOccurs="unbounded" />
-        <xs:element name="cukrasz" type="cukrasz_type" maxOccurs="unbounded" />
+        <xs:element name="cukraszda" type="cukraszda_type" minOccurs="1" maxOccurs="unbounded" />
+        <xs:element name="cukrasz" type="cukrasz_type" minOccurs="1" maxOccurs="unbounded" />
+        <xs:element name="sutemeny_lista" type="sutemeny_lista_type" minOccurs="1" maxOccurs="unbounded" />
+        <xs:element name="sutemeny" type="sutemeny_type" minOccurs="1" maxOccurs="unbounded" />
+        <xs:element name="vasarlo" type="vasarlo_type" minOccurs="1" maxOccurs="unbounded" />
+        <xs:element name="tranzakcio" type="tranzakcio_type" minOccurs="1" maxOccurs="unbounded" />
       </xs:sequence>
     </xs:complexType>
     <!-- kulcsok -->
-    <xs:key name="vasarlo_key">
-      <xs:selector xpath="vasarlo" />
-      <xs:field xpath="@v_id" />
-    </xs:key>
-    <xs:key name="sutemeny_key">
-      <xs:selector xpath="sutemeny" />
-      <xs:field xpath="@s_id" />
-    </xs:key>
-    <xs:key name="sutemeny_lista_key">
-      <xs:selector xpath="sutemeny_lista" />
-      <xs:field xpath="@sl_id" />
-    </xs:key>
+
     <xs:key name="cukraszda_key">
       <xs:selector xpath="cukraszda" />
       <xs:field xpath="@c_id" />
     </xs:key>
-    <xs:key name="cukrasz_key">
+
+    <xs:keyref name="cukrasz_cukraszda_key" refer="cukraszda_key">
       <xs:selector xpath="cukrasz" />
-      <xs:field xpath="@cu_id" />
-    </xs:key>
-    <!-- idegen kulcsok -->
-    <xs:keyref refer="vasarlo_key" name="vasarlo_tranzakcio_key">
-      <xs:selector xpath="vasarlo" />
-      <xs:field xpath="@v_t" />
-    </xs:keyref>
-    <xs:keyref refer="sutemeny_key" name="sutemeny_tranzakcio_key">
-      <xs:selector xpath="sutemeny" />
-      <xs:field xpath="@s_t" />
-    </xs:keyref>
-    <xs:keyref refer="sutemeny_lista_key" name="sutemeny_sutemeny_lista_key">
-      <xs:selector xpath="sutemeny_lista" />
-      <xs:field xpath="@s_sl" />
-    </xs:keyref>
-    <xs:keyref refer="cukraszda_key" name="sutemeny_lista_cukraszda_key">
-      <xs:selector xpath="cukraszda" />
-      <xs:field xpath="@sl_c" />
-    </xs:keyref>
-    <xs:keyref refer="cukrasz_key" name="cukrasz_cukraszda_key">
-      <xs:selector xpath="cukraszda" />
       <xs:field xpath="@cu_c" />
     </xs:keyref>
+
+    <xs:keyref name="sutemeny_lista_cukraszda_key" refer="cukraszda_key">
+      <xs:selector xpath="sutemeny_lista" />
+      <xs:field xpath="@sl_c" />
+    </xs:keyref>
+
+    <xs:key name="sutemeny_lista_key">
+      <xs:selector xpath="sutemeny_lista" />
+      <xs:field xpath="@sl_id" />
+    </xs:key>
+
+    <xs:keyref name="sutemeny_sutemeny_lista_key" refer="sutemeny_lista_key">
+      <xs:selector xpath="sutemeny" />
+      <xs:field xpath="@s_sl" />
+    </xs:keyref>
+
+    <xs:key name="vasarlo_key">
+      <xs:selector xpath="vasarlo" />
+      <xs:field xpath="@v_id" />
+    </xs:key>
+
+    <xs:keyref name="vasarlo_tranzakcio_key" refer="vasarlo_key">
+      <xs:selector xpath="tranzakcio" />
+      <xs:field xpath="@v_t"></xs:field>
+    </xs:keyref>
+
+    <xs:key name="sutemeny_key">
+      <xs:selector xpath="sutemeny" />
+      <xs:field xpath="@s_id" />
+    </xs:key>
+
+    <xs:keyref name="sutemeny_tranzakcio_key" refer="sutemeny_key">
+      <xs:selector xpath="tranzakcio" />
+      <xs:field xpath="@s_t"></xs:field>
+    </xs:keyref>
+
   </xs:element>
-
-
 </xs:schema>

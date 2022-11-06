@@ -52,7 +52,7 @@ public class DomQueryJmdrgg {
           .evaluate(doc, XPathConstants.NODESET);
 
         DomReadJmdrgg dr = new DomReadJmdrgg(doc);
-        dr.printNode(nodeName, nodeList);
+        dr.printNodes(nodeList);
 
         return nodeList.item(0);
       } catch (XPathExpressionException e) {

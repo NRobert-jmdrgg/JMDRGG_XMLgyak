@@ -180,8 +180,8 @@ public class DomReadJmdrgg {
     printTranzakcio(doc.getElementsByTagName("tranzakcio"));
   }
 
-  public void printNode(String nodeName, NodeList nodeList) {
-    switch (nodeName) {
+  public void printNodes(NodeList nodeList) {
+    switch (nodeList.item(0).getNodeName()) {
       case "cukraszda":
         printCukraszdak(nodeList);
       case "cukrasz":

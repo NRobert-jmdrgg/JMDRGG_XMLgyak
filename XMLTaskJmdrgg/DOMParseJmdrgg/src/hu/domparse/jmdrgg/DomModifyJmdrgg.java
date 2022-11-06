@@ -282,6 +282,27 @@ public class DomModifyJmdrgg {
     writeXml();
   }
 
+  public void modifyNode(NodeList nodeList, String tagName, String newValue) {
+    if (nodeList != null) {
+      for (int i = 0; i < nodeList.getLength(); i++) {
+        Node node = nodeList.item(i);
+        Element elem = (Element) node;
+        elem.getElementsByTagName(tagName).item(0).setTextContent(newValue);
+      }
+    }
+
+    writeXml();
+  }
+
+  public void modifyNode(Node node, String tagName, String newValue) {
+    if (node != null) {
+      Element elem = (Element) node;
+      elem.getElementsByTagName(tagName).item(0).setTextContent(newValue);
+    }
+
+    writeXml();
+  }
+
   private void writeXml() {
     try (FileOutputStream output = new FileOutputStream(outputFilename)) {
       TransformerFactory transformerFactory = TransformerFactory.newInstance();

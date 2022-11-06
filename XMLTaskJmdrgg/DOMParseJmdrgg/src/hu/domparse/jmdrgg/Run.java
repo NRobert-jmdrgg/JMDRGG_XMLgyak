@@ -18,16 +18,17 @@ public class Run {
       DomQueryJmdrgg dq = new DomQueryJmdrgg(doc);
       DomModifyJmdrgg dm = new DomModifyJmdrgg(doc, filename);
       // dr.printXml();
-      // dq.queryById("vasarlo", "v4");
+      // dq.queryById("vasarlo", "v1");
       // dq.queryVasarloByName("Nagy", "Róbert");
       // dq.queryCukraszByName("Tompa", "Tamás");
-      String[] tuls = { "klasszikus", "édes" };
+      // String[] tuls = { "klasszikus", "édes" };
 
       // dq.querySutemenyByKaloria(400);
       // dm.addVasarlo("Pista", "Laci", false, 40, "ferfi");
       // dm.removeById("vasarlo", "v4");
       // dm.addVasarlo("Pista", "Laci", false, 40, "férfi");
-      dm.removeByQuery(dq.querySutemenyByTulajdonsag(tuls));
+      // dm.removeByQuery(dq.querySutemenyByTulajdonsag(tuls));
+      dm.modifyNode(dq.queryById("vasarlo", "v1"), "keresztnev", "Pista");
     } catch (Exception e) {
       e.printStackTrace();
     }

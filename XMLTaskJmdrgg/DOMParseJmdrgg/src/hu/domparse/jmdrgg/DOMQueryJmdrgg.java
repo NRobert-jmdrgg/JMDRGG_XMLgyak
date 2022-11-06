@@ -16,8 +16,8 @@ public class DOMQueryJmdrgg {
   private static final String filename = "./XMLjmdrgg.xml";
   private static final DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 
-  public static void queryById(String nodeName, String value) {
-    String id;
+  public static Node queryById(String nodeName, String value) {
+    String id = null;
     switch (nodeName) {
       case "cukraszda":
         id = "c_id";
@@ -34,41 +34,48 @@ public class DOMQueryJmdrgg {
       case "vasarlo":
         id = "v_id";
         break;
-      default:
-        return;
     }
 
-    try {
-      DocumentBuilder builder = factory.newDocumentBuilder();
+    if (id != null) {
+      try {
+        DocumentBuilder builder = factory.newDocumentBuilder();
 
-      Document doc = builder.parse(filename);
+        Document doc = builder.parse(filename);
 
-      doc.getDocumentElement().normalize();
+        doc.getDocumentElement().normalize();
 
-      XPath xPath = XPathFactory.newInstance().newXPath();
-      String expression = String.format(
-        "/NR_beadando/%s[@%s = '%s']",
-        nodeName,
-        id,
-        value
-      );
+        XPath xPath = XPathFactory.newInstance().newXPath();
+        String expression = String.format(
+          "/NR_beadando/%s[@%s = '%s']",
+          nodeName,
+          id,
+          value
+        );
 
-      NodeList nodeList = (NodeList) xPath
-        .compile(expression)
-        .evaluate(doc, XPathConstants.NODESET);
+        NodeList nodeList = (NodeList) xPath
+          .compile(expression)
+          .evaluate(doc, XPathConstants.NODESET);
 
-      DomReadJmdrgg.printNode(nodeName, nodeList);
-    } catch (
-      ParserConfigurationException
-      | SAXException
-      | IOException
-      | XPathExpressionException e
-    ) {
-      e.printStackTrace();
+        // DomReadJmdrgg.printNode(nodeName, nodeList);
+
+        return nodeList.item(0);
+      } catch (
+        ParserConfigurationException
+        | SAXException
+        | IOException
+        | XPathExpressionException e
+      ) {
+        e.printStackTrace();
+      }
     }
+
+    return null;
   }
 
-  public static void queryVasarloByName(String vezeteknev, String keresztnev) {
+  public static NodeList queryVasarloByName(
+    String vezeteknev,
+    String keresztnev
+  ) {
     try {
       DocumentBuilder builder = factory.newDocumentBuilder();
 
@@ -86,8 +93,9 @@ public class DOMQueryJmdrgg {
       NodeList nodeList = (NodeList) xPath
         .compile(expression)
         .evaluate(doc, XPathConstants.NODESET);
+      // DomReadJmdrgg.printVasarlo(nodeList);
 
-      DomReadJmdrgg.printVasarlo(nodeList);
+      return nodeList;
     } catch (
       ParserConfigurationException
       | SAXException
@@ -96,9 +104,14 @@ public class DOMQueryJmdrgg {
     ) {
       e.printStackTrace();
     }
+
+    return null;
   }
 
-  public static void queryCukraszByName(String vezeteknev, String keresztnev) {
+  public static NodeList queryCukraszByName(
+    String vezeteknev,
+    String keresztnev
+  ) {
     try {
       DocumentBuilder builder = factory.newDocumentBuilder();
 
@@ -117,7 +130,9 @@ public class DOMQueryJmdrgg {
         .compile(expression)
         .evaluate(doc, XPathConstants.NODESET);
 
-      DomReadJmdrgg.printCukrasz(nodeList);
+      // DomReadJmdrgg.printCukrasz(nodeList);
+
+      return nodeList;
     } catch (
       ParserConfigurationException
       | SAXException
@@ -126,9 +141,11 @@ public class DOMQueryJmdrgg {
     ) {
       e.printStackTrace();
     }
+
+    return null;
   }
 
-  public static void queryCukraszdaByName(String name) {
+  public static NodeList queryCukraszdaByName(String name) {
     try {
       DocumentBuilder builder = factory.newDocumentBuilder();
 
@@ -146,7 +163,9 @@ public class DOMQueryJmdrgg {
         .compile(expression)
         .evaluate(doc, XPathConstants.NODESET);
 
-      DomReadJmdrgg.printCukraszdak(nodeList);
+      // DomReadJmdrgg.printCukraszdak(nodeList);
+
+      return nodeList;
     } catch (
       ParserConfigurationException
       | SAXException
@@ -155,9 +174,11 @@ public class DOMQueryJmdrgg {
     ) {
       e.printStackTrace();
     }
+
+    return null;
   }
 
-  public static void querySutemenyByTulajdonsag(String[] tulajdonsagok) {
+  public static NodeList querySutemenyByTulajdonsag(String[] tulajdonsagok) {
     try {
       DocumentBuilder builder = factory.newDocumentBuilder();
 
@@ -189,7 +210,9 @@ public class DOMQueryJmdrgg {
         .compile(expression)
         .evaluate(doc, XPathConstants.NODESET);
 
-      DomReadJmdrgg.printSutemeny(nodeList);
+      // DomReadJmdrgg.printSutemeny(nodeList);
+
+      return nodeList;
     } catch (
       ParserConfigurationException
       | SAXException
@@ -198,9 +221,11 @@ public class DOMQueryJmdrgg {
     ) {
       e.printStackTrace();
     }
+
+    return null;
   }
 
-  public static void querySutemenyByKaloria(int kaloria) {
+  public static NodeList querySutemenyByKaloria(int kaloria) {
     try {
       DocumentBuilder builder = factory.newDocumentBuilder();
 
@@ -218,7 +243,9 @@ public class DOMQueryJmdrgg {
         .compile(expression)
         .evaluate(doc, XPathConstants.NODESET);
 
-      DomReadJmdrgg.printSutemeny(nodeList);
+      // DomReadJmdrgg.printSutemeny(nodeList);
+
+      return nodeList;
     } catch (
       ParserConfigurationException
       | SAXException
@@ -227,5 +254,7 @@ public class DOMQueryJmdrgg {
     ) {
       e.printStackTrace();
     }
+
+    return null;
   }
 }

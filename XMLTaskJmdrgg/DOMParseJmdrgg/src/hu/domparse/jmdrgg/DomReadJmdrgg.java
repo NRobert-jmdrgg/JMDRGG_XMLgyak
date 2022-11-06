@@ -1,16 +1,18 @@
 package hu.domparse.jmdrgg;
 
-import java.io.*;
-import javax.xml.parsers.*;
-import org.w3c.dom.*;
-import org.xml.sax.SAXException;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.NodeList;
 
 public class DomReadJmdrgg {
 
-  private static final String filename = "./XMLjmdrgg.xml";
-  private static final DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+  private Document doc;
 
-  public static void printCukraszdak(NodeList nl) {
+  public DomReadJmdrgg(Document doc) {
+    this.doc = doc;
+  }
+
+  public void printCukraszdak(NodeList nl) {
     System.out.println("Cukrászdák: ");
     for (int i = 0; i < nl.getLength(); i++) {
       Element elem = (Element) nl.item(i);
@@ -43,7 +45,7 @@ public class DomReadJmdrgg {
     }
   }
 
-  public static void printCukrasz(NodeList nl) {
+  public void printCukrasz(NodeList nl) {
     System.out.println("Cukrászok: ");
 
     for (int i = 0; i < nl.getLength(); i++) {
@@ -69,7 +71,7 @@ public class DomReadJmdrgg {
     }
   }
 
-  public static void printSutemenyLista(NodeList nl) {
+  public void printSutemenyLista(NodeList nl) {
     System.out.println("Sütemény listák: ");
 
     for (int i = 0; i < nl.getLength(); i++) {
@@ -94,7 +96,7 @@ public class DomReadJmdrgg {
     }
   }
 
-  public static void printSutemeny(NodeList nl) {
+  public void printSutemeny(NodeList nl) {
     System.out.println("Sütemények: ");
 
     for (int i = 0; i < nl.getLength(); i++) {
@@ -126,7 +128,7 @@ public class DomReadJmdrgg {
     }
   }
 
-  public static void printVasarlo(NodeList nl) {
+  public void printVasarlo(NodeList nl) {
     System.out.println("Vásárlók: ");
 
     for (int i = 0; i < nl.getLength(); i++) {
@@ -157,7 +159,7 @@ public class DomReadJmdrgg {
     }
   }
 
-  public static void printTranzakcio(NodeList nl) {
+  public void printTranzakcio(NodeList nl) {
     System.out.println("Tranzakciók: ");
 
     for (int i = 0; i < nl.getLength(); i++) {
@@ -169,23 +171,16 @@ public class DomReadJmdrgg {
     }
   }
 
-  public static void printXml() {
-    try {
-      DocumentBuilder builder = factory.newDocumentBuilder();
-      Document doc = builder.parse(filename);
-
-      printCukraszdak(doc.getElementsByTagName("cukraszda"));
-      printCukrasz(doc.getElementsByTagName("cukrasz"));
-      printSutemenyLista(doc.getElementsByTagName("sutemeny_lista"));
-      printSutemeny(doc.getElementsByTagName("sutemeny"));
-      printVasarlo(doc.getElementsByTagName("vasarlo"));
-      printTranzakcio(doc.getElementsByTagName("tranzakcio"));
-    } catch (SAXException | ParserConfigurationException | IOException e) {
-      e.printStackTrace();
-    }
+  public void printXml() {
+    printCukraszdak(doc.getElementsByTagName("cukraszda"));
+    printCukrasz(doc.getElementsByTagName("cukrasz"));
+    printSutemenyLista(doc.getElementsByTagName("sutemeny_lista"));
+    printSutemeny(doc.getElementsByTagName("sutemeny"));
+    printVasarlo(doc.getElementsByTagName("vasarlo"));
+    printTranzakcio(doc.getElementsByTagName("tranzakcio"));
   }
 
-  public static void printNode(String nodeName, NodeList nodeList) {
+  public void printNode(String nodeName, NodeList nodeList) {
     switch (nodeName) {
       case "cukraszda":
         printCukraszdak(nodeList);

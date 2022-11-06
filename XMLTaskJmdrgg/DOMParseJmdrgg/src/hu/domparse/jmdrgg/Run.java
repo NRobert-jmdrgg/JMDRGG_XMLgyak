@@ -6,11 +6,10 @@ import org.w3c.dom.Document;
 
 public class Run {
 
-  private static final String filename = "./XMLjmdrgg.xml";
-  private static final DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-
   public static void main(String[] args) {
     try {
+      final String filename = "./XMLjmdrgg.xml";
+      DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
       DocumentBuilder builder = factory.newDocumentBuilder();
 
       Document doc = builder.parse(filename);
@@ -22,11 +21,13 @@ public class Run {
       // dq.queryById("vasarlo", "v4");
       // dq.queryVasarloByName("Nagy", "Róbert");
       // dq.queryCukraszByName("Tompa", "Tamás");
-      // String[] tuls = { "klasszikus", "édes" };
-      // dq.querySutemenyByTulajdonsag(tuls);
+      String[] tuls = { "klasszikus", "édes" };
+
       // dq.querySutemenyByKaloria(400);
       // dm.addVasarlo("Pista", "Laci", false, 40, "ferfi");
-      dm.removeById("vasarlo", "v4");
+      // dm.removeById("vasarlo", "v4");
+      // dm.addVasarlo("Pista", "Laci", false, 40, "férfi");
+      dm.removeByQuery(dq.querySutemenyByTulajdonsag(tuls));
     } catch (Exception e) {
       e.printStackTrace();
     }

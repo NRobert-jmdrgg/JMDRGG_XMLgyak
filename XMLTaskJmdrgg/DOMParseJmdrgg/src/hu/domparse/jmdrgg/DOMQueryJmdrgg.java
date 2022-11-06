@@ -73,7 +73,9 @@ public class DomQueryJmdrgg {
       NodeList nodeList = (NodeList) xPath
         .compile(expression)
         .evaluate(doc, XPathConstants.NODESET);
-      // DomReadJmdrgg.printVasarlo(nodeList);
+
+      DomReadJmdrgg dr = new DomReadJmdrgg(doc);
+      dr.printVasarlo(nodeList);
 
       return nodeList;
     } catch (XPathExpressionException e) {
@@ -146,7 +148,8 @@ public class DomQueryJmdrgg {
         .compile(expression)
         .evaluate(doc, XPathConstants.NODESET);
 
-      // DomReadJmdrgg.printSutemeny(nodeList);
+      // DomReadJmdrgg dr = new DomReadJmdrgg(doc);
+      // dr.printSutemeny(nodeList);
 
       return nodeList;
     } catch (XPathExpressionException e) {

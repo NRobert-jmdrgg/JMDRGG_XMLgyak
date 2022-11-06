@@ -67,7 +67,7 @@ public class DomModifyJmdrgg {
 
     root.insertBefore(newVasarlo, lastVasarlo.getNextSibling());
 
-    writeXml(doc);
+    writeXml();
   }
 
   public void addCukrasz(
@@ -113,7 +113,7 @@ public class DomModifyJmdrgg {
 
     root.insertBefore(newCukrasz, lastCukrasz.getNextSibling());
 
-    writeXml(doc);
+    writeXml();
   }
 
   public void addCukraszda(
@@ -168,7 +168,7 @@ public class DomModifyJmdrgg {
 
     root.insertBefore(newCukraszda, lastCukraszda.getNextSibling());
 
-    writeXml(doc);
+    writeXml();
   }
 
   public void addSutemeny(
@@ -215,7 +215,7 @@ public class DomModifyJmdrgg {
 
     root.insertBefore(newSutemeny, lastSutemeny.getNextSibling());
 
-    writeXml(doc);
+    writeXml();
   }
 
   public void addSutemenyLista(
@@ -257,7 +257,18 @@ public class DomModifyJmdrgg {
 
     root.insertBefore(newSutemenyLista, lastSutemenyLista.getNextSibling());
 
-    writeXml(doc);
+    writeXml();
+  }
+
+  public void removeByQuery(NodeList nodeList) {
+    if (nodeList != null) {
+      for (int i = 0; i < nodeList.getLength(); i++) {
+        Node node = nodeList.item(i);
+        node.getParentNode().removeChild(node);
+      }
+    }
+
+    writeXml();
   }
 
   public void removeById(String nodeType, String id) {
@@ -268,10 +279,10 @@ public class DomModifyJmdrgg {
       node.getParentNode().removeChild(node);
     }
 
-    writeXml(doc);
+    writeXml();
   }
 
-  private void writeXml(Document doc) {
+  private void writeXml() {
     try (FileOutputStream output = new FileOutputStream(outputFilename)) {
       TransformerFactory transformerFactory = TransformerFactory.newInstance();
       Transformer transformer = transformerFactory.newTransformer(

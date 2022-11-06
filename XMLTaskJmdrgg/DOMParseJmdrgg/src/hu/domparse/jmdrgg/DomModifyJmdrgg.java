@@ -1,9 +1,9 @@
 package hu.domparse.jmdrgg;
 
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
-import javax.swing.text.AbstractDocument.ElementEdit;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -13,6 +13,7 @@ import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
+import javax.xml.transform.stream.StreamSource;
 import org.w3c.dom.DOMException;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -60,10 +61,17 @@ public class DomModifyJmdrgg {
       newVasarlo.appendChild(eletkorElem);
       newVasarlo.appendChild(nemElem);
 
-      root.insertBefore(
-        newVasarlo,
-        vasarlok.item(vasarlok.getLength() - 1).getNextSibling()
-      );
+      Node lastVasarlo = vasarlok.item(vasarlok.getLength() - 1);
+
+      String lastId = lastVasarlo
+        .getAttributes()
+        .getNamedItem("v_id")
+        .getTextContent();
+      String newId =
+        "v" + (Integer.parseInt(lastId.substring(lastId.length() - 1)) + 1);
+      newVasarlo.setAttribute("v_id", newId);
+
+      root.insertBefore(newVasarlo, lastVasarlo.getNextSibling());
 
       try (FileOutputStream output = new FileOutputStream(filename)) {
         writeXml(doc, output);
@@ -80,11 +88,8 @@ public class DomModifyJmdrgg {
   private static void writeXml(Document doc, OutputStream output)
     throws TransformerException {
     TransformerFactory transformerFactory = TransformerFactory.newInstance();
-    Transformer transformer = transformerFactory.newTransformer();
-    transformer.setOutputProperty(OutputKeys.INDENT, "yes");
-    transformer.setOutputProperty(
-      "{http://xml.apache.org/xslt}indent-amount",
-      "2"
+    Transformer transformer = transformerFactory.newTransformer(
+      new StreamSource(new File("./stylesheet.xslt"))
     );
     DOMSource source = new DOMSource(doc);
     StreamResult result = new StreamResult(output);

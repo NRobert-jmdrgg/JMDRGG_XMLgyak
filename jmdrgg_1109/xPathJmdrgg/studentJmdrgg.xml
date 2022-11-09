@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<class>
+  <student id="01">
+    <keresztnev>agasdfgsdfas</keresztnev>
+    <vezeteknev>asdfdasfas</vezeteknev>
+    <becenev>aerawfadsfs</becenev>
+    <kor>12</kor>
+  </student>
+  <student id="02">
+    <keresztnev>hdfsgsdfgd</keresztnev>
+    <vezeteknev>asdjfjdasfpasdpf</vezeteknev>
+    <becenev>dfgasdgga</becenev>
+    <kor>2345252</kor>
+  </student>
+  <student id="03">
+    <keresztnev>dfasdfsagatge</keresztnev>
+    <vezeteknev>őadfkaőfkaőfkd</vezeteknev>
+    <becenev>agdgeadg</becenev>
+    <kor>352342</kor>
+  </student>
+</class>

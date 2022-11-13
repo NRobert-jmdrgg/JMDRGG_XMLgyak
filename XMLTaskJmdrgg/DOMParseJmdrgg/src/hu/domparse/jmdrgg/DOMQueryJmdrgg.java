@@ -13,11 +13,21 @@ public class DomQueryJmdrgg {
   private Document doc;
   private XPath xPath;
 
+  /**
+   * Cukrász xml dokumentum lekérdezések kezeléséhez használt objektum
+   * @param doc
+   */
   public DomQueryJmdrgg(Document doc) {
     this.doc = doc;
     this.xPath = XPathFactory.newInstance().newXPath();
   }
 
+  /**
+   * Tetszőleges node lekérdezése id alapján
+   * @param nodeName
+   * @param value
+   * @return
+   */
   public Node queryById(String nodeName, String value) {
     String id = null;
     switch (nodeName) {
@@ -63,6 +73,12 @@ public class DomQueryJmdrgg {
     return null;
   }
 
+  /**
+   * Vásárlók keresése név alapján
+   * @param vezeteknev
+   * @param keresztnev
+   * @return
+   */
   public NodeList queryVasarloByName(String vezeteknev, String keresztnev) {
     String expression = String.format(
       "/NR_beadando/vasarlo[nev/vezeteknev='%s' and nev/keresztnev='%s']",
@@ -85,6 +101,12 @@ public class DomQueryJmdrgg {
     return null;
   }
 
+  /**
+   * Cukrászok lekérdezése név alapján
+   * @param vezeteknev
+   * @param keresztnev
+   * @return
+   */
   public NodeList queryCukraszByName(String vezeteknev, String keresztnev) {
     String expression = String.format(
       "/NR_beadando/cukrasz[nev/vezeteknev='%s' and nev/keresztnev='%s']",
@@ -96,7 +118,8 @@ public class DomQueryJmdrgg {
         .compile(expression)
         .evaluate(doc, XPathConstants.NODESET);
 
-      // DomReadJmdrgg.printCukrasz(nodeList);
+      DomReadJmdrgg dr = new DomReadJmdrgg(doc);
+      dr.printCukrasz(nodeList);
 
       return nodeList;
     } catch (XPathExpressionException e) {
@@ -106,6 +129,11 @@ public class DomQueryJmdrgg {
     return null;
   }
 
+  /**
+   * Cukrászda lekérdezése név alapján
+   * @param name
+   * @return
+   */
   public NodeList queryCukraszdaByName(String name) {
     String expression = String.format("/NR_beadando/cukraszda[nev='%s']", name);
 
@@ -114,7 +142,8 @@ public class DomQueryJmdrgg {
         .compile(expression)
         .evaluate(doc, XPathConstants.NODESET);
 
-      // DomReadJmdrgg.printCukraszdak(nodeList);
+      DomReadJmdrgg dr = new DomReadJmdrgg(doc);
+      dr.printCukraszdak(nodeList);
 
       return nodeList;
     } catch (XPathExpressionException e) {
@@ -124,6 +153,11 @@ public class DomQueryJmdrgg {
     return null;
   }
 
+  /**
+   * Sütemények lekérdezése tulajdonságok alapján
+   * @param tulajdonsagok
+   * @return
+   */
   public NodeList querySutemenyByTulajdonsag(String[] tulajdonsagok) {
     StringBuilder sb = new StringBuilder();
     if (tulajdonsagok.length == 1) {
@@ -148,8 +182,8 @@ public class DomQueryJmdrgg {
         .compile(expression)
         .evaluate(doc, XPathConstants.NODESET);
 
-      // DomReadJmdrgg dr = new DomReadJmdrgg(doc);
-      // dr.printSutemeny(nodeList);
+      DomReadJmdrgg dr = new DomReadJmdrgg(doc);
+      dr.printSutemeny(nodeList);
 
       return nodeList;
     } catch (XPathExpressionException e) {
@@ -159,6 +193,11 @@ public class DomQueryJmdrgg {
     return null;
   }
 
+  /**
+   * Sütemények lekérdezése kalória alapján
+   * @param kaloria
+   * @return
+   */
   public NodeList querySutemenyByKaloria(int kaloria) {
     String expression = String.format(
       "/NR_beadando/sutemeny[kaloria < '%s']",
@@ -169,7 +208,8 @@ public class DomQueryJmdrgg {
         .compile(expression)
         .evaluate(doc, XPathConstants.NODESET);
 
-      // DomReadJmdrgg.printSutemeny(nodeList);
+      DomReadJmdrgg dr = new DomReadJmdrgg(doc);
+      dr.printSutemeny(nodeList);
 
       return nodeList;
     } catch (XPathExpressionException e) {

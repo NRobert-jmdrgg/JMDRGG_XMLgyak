@@ -1,3 +1,5 @@
 *.dia~
 /bin
 *.class
+*.txt
+*.docx

@@ -9,6 +9,7 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
+import org.w3c.dom.DOMException;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -19,11 +20,24 @@ public class DomModifyJmdrgg {
   private Document doc;
   private String outputFilename;
 
+  /**
+   * Cukrászda xml fájl módosítására szolgáló objektum
+   * @param doc
+   * @param outputFilename kimeneti xml fájl neve
+   */
   public DomModifyJmdrgg(Document doc, String outputFilename) {
     this.doc = doc;
     this.outputFilename = outputFilename;
   }
 
+  /**
+   * Várárló hozzáadása
+   * @param vezeteknev
+   * @param keresztnev
+   * @param torzsvasarlo
+   * @param eletkor
+   * @param nem
+   */
   public void addVasarlo(
     String vezeteknev,
     String keresztnev,
@@ -34,8 +48,9 @@ public class DomModifyJmdrgg {
     Element root = doc.getDocumentElement();
 
     NodeList vasarlok = doc.getElementsByTagName("vasarlo");
-    Element newVasarlo = doc.createElement("vasarlo");
 
+    // új vásárló elem építés
+    Element newVasarlo = doc.createElement("vasarlo");
     Element nev = doc.createElement("nev");
     Element vezeteknevElem = doc.createElement("vezeteknev");
     vezeteknevElem.setTextContent(vezeteknev);
@@ -55,6 +70,7 @@ public class DomModifyJmdrgg {
     newVasarlo.appendChild(eletkorElem);
     newVasarlo.appendChild(nemElem);
 
+    // id inkrementálása
     Node lastVasarlo = vasarlok.item(vasarlok.getLength() - 1);
 
     String lastId = lastVasarlo
@@ -65,11 +81,21 @@ public class DomModifyJmdrgg {
       "v" + (Integer.parseInt(lastId.substring(lastId.length() - 1)) + 1);
     newVasarlo.setAttribute("v_id", newId);
 
+    // az előző vásárló után beillesztés
     root.insertBefore(newVasarlo, lastVasarlo.getNextSibling());
 
+    // írás az outputfileba
     writeXml();
   }
 
+  /**
+   * Cukrász hozzáadása
+   * @param vezeteknev
+   * @param keresztnev
+   * @param eletkor
+   * @param nem
+   * @param cu_c
+   */
   public void addCukrasz(
     String vezeteknev,
     String keresztnev,
@@ -80,6 +106,7 @@ public class DomModifyJmdrgg {
     Element root = doc.getDocumentElement();
 
     NodeList cukraszok = doc.getElementsByTagName("cukrasz");
+    // új Cukrász elem építés
     Element newCukrasz = doc.createElement("cukrasz");
 
     Element nev = doc.createElement("nev");
@@ -98,6 +125,7 @@ public class DomModifyJmdrgg {
     newCukrasz.appendChild(eletkorElem);
     newCukrasz.appendChild(nemElem);
 
+    // id inkrementálása
     Node lastCukrasz = cukraszok.item(cukraszok.getLength() - 1);
 
     String lastId = lastCukrasz
@@ -111,11 +139,23 @@ public class DomModifyJmdrgg {
     // foreign key
     newCukrasz.setAttribute("cu_c", cu_c);
 
+    // az előző cukrász után beillesztés
     root.insertBefore(newCukrasz, lastCukrasz.getNextSibling());
 
+    // output fileba kiírás
     writeXml();
   }
 
+  /**
+   * Cukrászda hozzáadása
+   * @param nev
+   * @param varos
+   * @param utca
+   * @param hazszam
+   * @param ertekeles
+   * @param tulajdonos
+   * @param weboldal
+   */
   public void addCukraszda(
     String nev,
     String varos,
@@ -171,6 +211,14 @@ public class DomModifyJmdrgg {
     writeXml();
   }
 
+  /**
+   * Sütemény hozzáadása
+   * @param nev
+   * @param ar
+   * @param kaloria
+   * @param tulajdonsagok
+   * @param s_sl
+   */
   public void addSutemeny(
     String nev,
     int ar,
@@ -218,6 +266,13 @@ public class DomModifyJmdrgg {
     writeXml();
   }
 
+  /**
+   * Sütemény lista hozzáadása
+   * @param legnepszerubb
+   * @param legnepszerutlenebb
+   * @param legutobbFrissitve
+   * @param sl_c
+   */
   public void addSutemenyLista(
     String legnepszerubb,
     String legnepszerutlenebb,
@@ -260,6 +315,10 @@ public class DomModifyJmdrgg {
     writeXml();
   }
 
+  /**
+   * NodeLista törlése
+   * @param nodeList
+   */
   public void removeByQuery(NodeList nodeList) {
     if (nodeList != null) {
       for (int i = 0; i < nodeList.getLength(); i++) {
@@ -271,6 +330,11 @@ public class DomModifyJmdrgg {
     writeXml();
   }
 
+  /**
+   * Elem törlése id alapján
+   * @param nodeType
+   * @param id
+   */
   public void removeById(String nodeType, String id) {
     DomQueryJmdrgg dq = new DomQueryJmdrgg(doc);
     Node node = dq.queryById(nodeType, id);
@@ -282,27 +346,50 @@ public class DomModifyJmdrgg {
     writeXml();
   }
 
+  /**
+   * Elemek módosítása tag alapján
+   * @param nodeList
+   * @param tagName
+   * @param newValue
+   */
   public void modifyNode(NodeList nodeList, String tagName, String newValue) {
     if (nodeList != null) {
       for (int i = 0; i < nodeList.getLength(); i++) {
         Node node = nodeList.item(i);
         Element elem = (Element) node;
-        elem.getElementsByTagName(tagName).item(0).setTextContent(newValue);
+        try {
+          elem.getElementsByTagName(tagName).item(0).setTextContent(newValue);
+        } catch (DOMException e) {
+          e.printStackTrace();
+        }
       }
     }
 
     writeXml();
   }
 
+  /**
+   * Elemek módosítása tag alapján
+   * @param node
+   * @param tagName
+   * @param newValue
+   */
   public void modifyNode(Node node, String tagName, String newValue) {
     if (node != null) {
       Element elem = (Element) node;
-      elem.getElementsByTagName(tagName).item(0).setTextContent(newValue);
+      try {
+        elem.getElementsByTagName(tagName).item(0).setTextContent(newValue);
+      } catch (DOMException e) {
+        e.printStackTrace();
+      }
     }
 
     writeXml();
   }
 
+  /**
+   * Módosítások kiírása az outputfileba
+   */
   private void writeXml() {
     try (FileOutputStream output = new FileOutputStream(outputFilename)) {
       TransformerFactory transformerFactory = TransformerFactory.newInstance();

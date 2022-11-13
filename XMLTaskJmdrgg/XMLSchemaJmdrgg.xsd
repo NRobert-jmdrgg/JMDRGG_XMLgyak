@@ -169,8 +169,8 @@
         <xs:element name="tranzakcio" type="tranzakcio_type" minOccurs="1" maxOccurs="unbounded" />
       </xs:sequence>
     </xs:complexType>
-    <!-- kulcsok -->
 
+    <!-- kulcsok -->
     <xs:key name="cukraszda_key">
       <xs:selector xpath="cukraszda" />
       <xs:field xpath="@c_id" />

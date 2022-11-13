@@ -453,19 +453,23 @@ public class DomReadJmdrgg {
    * @param nodeList gyökérelem
    */
   public void printNodes(NodeList nodeList) {
-    switch (nodeList.item(0).getNodeName()) {
-      case "cukraszda":
-        printCukraszdak(nodeList);
-      case "cukrasz":
-        printCukrasz(nodeList);
-      case "sutemeny_lista":
-        printSutemenyLista(nodeList);
-      case "sutemeny":
-        printSutemeny(nodeList);
-      case "vasarlo":
-        printVasarlo(nodeList);
-      default:
-        return;
+    try {
+      switch (nodeList.item(0).getNodeName()) {
+        case "cukraszda":
+          printCukraszdak(nodeList);
+        case "cukrasz":
+          printCukrasz(nodeList);
+        case "sutemeny_lista":
+          printSutemenyLista(nodeList);
+        case "sutemeny":
+          printSutemeny(nodeList);
+        case "vasarlo":
+          printVasarlo(nodeList);
+        default:
+          return;
+      }
+    } catch (NullPointerException e) {
+      e.printStackTrace();
     }
   }
 }

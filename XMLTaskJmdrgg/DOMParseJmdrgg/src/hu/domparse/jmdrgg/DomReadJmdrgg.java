@@ -132,7 +132,7 @@ public class DomReadJmdrgg {
     System.out.println("Vásárlók: ");
 
     for (int i = 0; i < nl.getLength(); i++) {
-      Element elem = (Element) nl.item(i);
+      Element elem = (Element) nl.item(i); 
 
       System.out.println("id: " + elem.getAttribute("v_id"));
 

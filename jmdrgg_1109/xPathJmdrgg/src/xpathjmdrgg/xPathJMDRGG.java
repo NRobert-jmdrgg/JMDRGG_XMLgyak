@@ -1,28 +1,23 @@
 package xpathjmdrgg;
 
 import java.io.IOException;
-
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
-
-import org.w3c.dom.Document;
-
 import javax.xml.xpath.XPath;
 import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathExpressionException;
 import javax.xml.xpath.XPathFactory;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
+import org.w3c.dom.Document;
 import org.w3c.dom.Element;
+import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
 public class xPathJMDRGG {
-  private static XPath xpath =  XPathFactory.newInstance().newXPath();
+
+  private static XPath xpath = XPathFactory.newInstance().newXPath();
 
   public static void main(String[] args) {
-
-
     DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
     try {
       DocumentBuilder builder = factory.newDocumentBuilder();
@@ -34,9 +29,7 @@ public class xPathJMDRGG {
       // printStudents(getSecondStudent(doc));
       // printStudents(getLastStudent(doc));
       printStudents(getFirstTwoStudents(doc));
-      
-    } catch (ParserConfigurationException 
-      | SAXException | IOException e) {
+    } catch (ParserConfigurationException | SAXException | IOException e) {
       e.printStackTrace();
     }
   }
@@ -50,22 +43,25 @@ public class xPathJMDRGG {
     } catch (XPathExpressionException e1) {
       e1.printStackTrace();
     }
-    
+
     return null;
   }
 
-
-  public static void printStudents (NodeList nodeList) {
+  public static void printStudents(NodeList nodeList) {
     for (int i = 0; i < nodeList.getLength(); i++) {
       Element e = (Element) nodeList.item(i);
-      System.out.println(e.getElementsByTagName("vezeteknev").item(0)
-        .getTextContent());
-      System.out.println(e.getElementsByTagName("keresztnev").item(0)
-        .getTextContent());
-      System.out.println(e.getElementsByTagName("becenev").item(0)
-        .getTextContent());
-      System.out.println(e.getElementsByTagName("kor").item(0)
-        .getTextContent());
+      System.out.println(
+        e.getElementsByTagName("vezeteknev").item(0).getTextContent()
+      );
+      System.out.println(
+        e.getElementsByTagName("keresztnev").item(0).getTextContent()
+      );
+      System.out.println(
+        e.getElementsByTagName("becenev").item(0).getTextContent()
+      );
+      System.out.println(
+        e.getElementsByTagName("kor").item(0).getTextContent()
+      );
     }
   }
 
@@ -78,7 +74,7 @@ public class xPathJMDRGG {
     } catch (XPathExpressionException e1) {
       e1.printStackTrace();
     }
-    
+
     return null;
   }
 
@@ -91,7 +87,7 @@ public class xPathJMDRGG {
     } catch (XPathExpressionException e1) {
       e1.printStackTrace();
     }
-    
+
     return null;
   }
 
@@ -104,7 +100,7 @@ public class xPathJMDRGG {
     } catch (XPathExpressionException e1) {
       e1.printStackTrace();
     }
-    
+
     return null;
   }
 
@@ -117,7 +113,7 @@ public class xPathJMDRGG {
     } catch (XPathExpressionException e1) {
       e1.printStackTrace();
     }
-    
+
     return null;
   }
 
@@ -130,7 +126,7 @@ public class xPathJMDRGG {
     } catch (XPathExpressionException e1) {
       e1.printStackTrace();
     }
-    
+
     return null;
   }
 
@@ -143,7 +139,7 @@ public class xPathJMDRGG {
     } catch (XPathExpressionException e1) {
       e1.printStackTrace();
     }
-    
+
     return null;
   }
 
@@ -156,8 +152,7 @@ public class xPathJMDRGG {
     } catch (XPathExpressionException e1) {
       e1.printStackTrace();
     }
-    
+
     return null;
   }
-
 }

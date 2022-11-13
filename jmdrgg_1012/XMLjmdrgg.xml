@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <NR_vendeglatas xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:noNamespaceSchemaLocation="XMLSchemajmdrgg.xsd" >
+  xsi:noNamespaceSchemaLocation="XMLSchemajmdrgg.xsd">
   <etterem ekod="e1">
     <csillag>2</csillag>
     <cim>
@@ -123,15 +123,15 @@
   </szakacs>
 
   <rendeles e_r="e1" v_r="v1">
-      <osszeg>3100</osszeg>
-      <etel>2 darab akciós menü</etel>
+    <osszeg>3100</osszeg>
+    <etel>2 darab akciós menü</etel>
   </rendeles>
   <rendeles e_r="e2" v_r="v2">
-      <osszeg>1400</osszeg>
-      <etel>Magyaros bableves</etel>
+    <osszeg>1400</osszeg>
+    <etel>Magyaros bableves</etel>
   </rendeles>
   <rendeles e_r="e3" v_r="v3">
-      <osszeg>1600</osszeg>
-      <etel>Húsleves hús nélkül</etel>
+    <osszeg>1600</osszeg>
+    <etel>Húsleves hús nélkül</etel>
   </rendeles>
 </NR_vendeglatas>

@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<NR_beadando xsi:noNamespaceSchemaLocation="XMLSchemaJmdrgg.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-
+<NR_beadando xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="XMLSchemaJmdrgg.xsd">
   <cukraszda c_id="c1">
     <nev>Daubner Cukrászda</nev>
     <hely>
@@ -35,8 +33,7 @@
     <tulajdonos>Szőke Balázs</tulajdonos>
     <weboldal>szokecukraszda.hu</weboldal>
   </cukraszda>
-
-  <cukrasz cu_id="cu1" cu_c="c1">
+  <cukrasz cu_c="c1" cu_id="cu1">
     <nev>
       <vezeteknev>Tompa</vezeteknev>
       <keresztnev>Tamás</keresztnev>
@@ -44,7 +41,7 @@
     <eletkor>57</eletkor>
     <nem>férfi</nem>
   </cukrasz>
-  <cukrasz cu_id="cu2" cu_c="c1">
+  <cukrasz cu_c="c1" cu_id="cu2">
     <nev>
       <vezeteknev>Patkós</vezeteknev>
       <keresztnev>Petra</keresztnev>
@@ -52,7 +49,7 @@
     <eletkor>21</eletkor>
     <nem>nő</nem>
   </cukrasz>
-  <cukrasz cu_id="cu3" cu_c="c1">
+  <cukrasz cu_c="c1" cu_id="cu3">
     <nev>
       <vezeteknev>Nagy</vezeteknev>
       <keresztnev>Bence</keresztnev>
@@ -60,7 +57,7 @@
     <eletkor>18</eletkor>
     <nem>férfi</nem>
   </cukrasz>
-  <cukrasz cu_id="cu4" cu_c="c2">
+  <cukrasz cu_c="c2" cu_id="cu4">
     <nev>
       <vezeteknev>Szabó</vezeteknev>
       <keresztnev>Bence</keresztnev>
@@ -68,7 +65,7 @@
     <eletkor>21</eletkor>
     <nem>férfi</nem>
   </cukrasz>
-  <cukrasz cu_id="cu5" cu_c="c2">
+  <cukrasz cu_c="c2" cu_id="cu5">
     <nev>
       <vezeteknev>Mathers</vezeteknev>
       <keresztnev>Marshall</keresztnev>
@@ -76,7 +73,7 @@
     <eletkor>50</eletkor>
     <nem>férfi</nem>
   </cukrasz>
-  <cukrasz cu_id="cu6" cu_c="c2">
+  <cukrasz cu_c="c2" cu_id="cu6">
     <nev>
       <vezeteknev>Jepsen</vezeteknev>
       <keresztnev>Carly</keresztnev>
@@ -84,7 +81,7 @@
     <eletkor>36</eletkor>
     <nem>nő</nem>
   </cukrasz>
-  <cukrasz cu_id="cu7" cu_c="c3">
+  <cukrasz cu_c="c3" cu_id="cu7">
     <nev>
       <vezeteknev>Snake</vezeteknev>
       <keresztnev>David</keresztnev>
@@ -92,7 +89,7 @@
     <eletkor>24</eletkor>
     <nem>férfi</nem>
   </cukrasz>
-  <cukrasz cu_id="cu8" cu_c="c3">
+  <cukrasz cu_c="c3" cu_id="cu8">
     <nev>
       <vezeteknev>McMillen</vezeteknev>
       <keresztnev>Edmund</keresztnev>
@@ -100,7 +97,7 @@
     <eletkor>42</eletkor>
     <nem>férfi</nem>
   </cukrasz>
-  <cukrasz cu_id="cu9" cu_c="c3">
+  <cukrasz cu_c="c3" cu_id="cu9">
     <nev>
       <vezeteknev>Fors</vezeteknev>
       <keresztnev>Sebastian</keresztnev>
@@ -108,33 +105,21 @@
     <eletkor>31</eletkor>
     <nem>férfi</nem>
   </cukrasz>
-
-  <sutemeny_lista sl_id="sl1" sl_c="c1">
+  <sutemeny_lista sl_c="c1" sl_id="sl1">
     <legnepszerubb>Mignon</legnepszerubb>
     <legnepszerutlenebb>Almás pite</legnepszerutlenebb>
     <legutobb_frissitve>2022-04-26</legutobb_frissitve>
   </sutemeny_lista>
-  <sutemeny_lista sl_id="sl2" sl_c="c2">
+  <sutemeny_lista sl_c="c2" sl_id="sl2">
     <legnepszerubb>Képviselőfánk</legnepszerubb>
     <legnepszerutlenebb>Piskótatekercs</legnepszerutlenebb>
     <legutobb_frissitve>2022-06-22</legutobb_frissitve>
   </sutemeny_lista>
-  <sutemeny_lista sl_id="sl3" sl_c="c3">
+  <sutemeny_lista sl_c="c3" sl_id="sl3">
     <legnepszerubb>Joghurtos epertorta szelet</legnepszerubb>
     <legnepszerutlenebb>Somlói galuska</legnepszerutlenebb>
     <legutobb_frissitve>2022-03-20</legutobb_frissitve>
   </sutemeny_lista>
-
-
-  <sutemeny s_id="s1" s_sl="sl1">
-    <nev>Almás pite</nev>
-    <ar>740</ar>
-    <kaloria>296</kaloria>
-    <tulajdonsag>klasszikus</tulajdonsag>
-    <tulajdonsag>fahéjas</tulajdonsag>
-    <tulajdonsag>almás</tulajdonsag>
-    <tulajdonsag>pite</tulajdonsag>
-  </sutemeny>
   <sutemeny s_id="s2" s_sl="sl1">
     <nev>Mandarinos túrótorta szelet</nev>
     <ar>990</ar>
@@ -156,65 +141,6 @@
     <tulajdonsag>piskóta</tulajdonsag>
     <tulajdonsag>torta szelet</tulajdonsag>
   </sutemeny>
-  <sutemeny s_id="s4" s_sl="sl1">
-    <nev>Mignon</nev>
-    <ar>720</ar>
-    <kaloria>120</kaloria>
-    <tulajdonsag>cukormáz</tulajdonsag>
-    <tulajdonsag>édes</tulajdonsag>
-    <tulajdonsag>Hagyományos</tulajdonsag>
-  </sutemeny>
-  <sutemeny s_id="s5" s_sl="sl2">
-    <nev>Piramis szelet</nev>
-    <ar>850</ar>
-    <kaloria>110</kaloria>
-    <tulajdonsag>krém</tulajdonsag>
-    <tulajdonsag>Csokoládés</tulajdonsag>
-    <tulajdonsag>édes</tulajdonsag>
-    <tulajdonsag>Klasszikus</tulajdonsag>
-    <tulajdonsag>krémes</tulajdonsag>
-    <tulajdonsag>piskóta</tulajdonsag>
-  </sutemeny>
-  <sutemeny s_id="s6" s_sl="sl2">
-    <nev>Képviselőfánk</nev>
-    <ar>790</ar>
-    <kaloria>200</kaloria>
-    <tulajdonsag>édes</tulajdonsag>
-    <tulajdonsag>Klasszikus</tulajdonsag>
-    <tulajdonsag>tejszínhabos</tulajdonsag>
-    <tulajdonsag>vanília krémes</tulajdonsag>
-  </sutemeny>
-  <sutemeny s_id="s7" s_sl="sl2">
-    <nev>Piskótatekercs</nev>
-    <ar>710</ar>
-    <kaloria>110</kaloria>
-    <tulajdonsag>baracklekvár</tulajdonsag>
-    <tulajdonsag>édes</tulajdonsag>
-    <tulajdonsag>Klasszikus</tulajdonsag>
-    <tulajdonsag>piskóta</tulajdonsag>
-    <tulajdonsag>tekercs</tulajdonsag>
-  </sutemeny>
-  <sutemeny s_id="s8" s_sl="sl3">
-    <nev>Málnahabos</nev>
-    <ar>710</ar>
-    <kaloria>230</kaloria>
-    <tulajdonsag>édes</tulajdonsag>
-    <tulajdonsag>gyümölcsös</tulajdonsag>
-    <tulajdonsag>habos</tulajdonsag>
-    <tulajdonsag>málnás</tulajdonsag>
-  </sutemeny>
-  <sutemeny s_id="s9" s_sl="sl3">
-    <nev>Joghurtos epertorta szelet</nev>
-    <ar>990</ar>
-    <kaloria>400</kaloria>
-    <tulajdonsag>édes</tulajdonsag>
-    <tulajdonsag>epres</tulajdonsag>
-    <tulajdonsag>gyümölcsös</tulajdonsag>
-    <tulajdonsag>klasszikus</tulajdonsag>
-    <tulajdonsag>piskóta</tulajdonsag>
-    <tulajdonsag>tejszihabos</tulajdonsag>
-    <tulajdonsag>torta szelet</tulajdonsag>
-  </sutemeny>
   <sutemeny s_id="s10" s_sl="sl3">
     <nev>Somlói galuska</nev>
     <ar>1100</ar>
@@ -225,11 +151,10 @@
     <tulajdonsag>piskóta</tulajdonsag>
     <tulajdonsag>tejszínhabos</tulajdonsag>
   </sutemeny>
-
   <vasarlo v_id="v1">
     <nev>
       <vezeteknev>Nagy</vezeteknev>
-      <keresztnev>Róbert</keresztnev>
+      <keresztnev>Pista</keresztnev>
     </nev>
     <torzsvasarlo>igen</torzsvasarlo>
     <eletkor>21</eletkor>
@@ -253,59 +178,58 @@
     <eletkor>56</eletkor>
     <nem>férfi</nem>
   </vasarlo>
-
-  <tranzakcio v_t="v1" s_t="s1">
+  <tranzakcio s_t="s1" v_t="v1">
     <datum>2022-03-20</datum>
   </tranzakcio>
-  <tranzakcio v_t="v1" s_t="s2">
+  <tranzakcio s_t="s2" v_t="v1">
     <datum>2022-03-20</datum>
   </tranzakcio>
-  <tranzakcio v_t="v1" s_t="s4">
+  <tranzakcio s_t="s4" v_t="v1">
     <datum>2022-04-01</datum>
   </tranzakcio>
-  <tranzakcio v_t="v1" s_t="s5">
+  <tranzakcio s_t="s5" v_t="v1">
     <datum>2022-04-01</datum>
   </tranzakcio>
-  <tranzakcio v_t="v1" s_t="s9">
+  <tranzakcio s_t="s9" v_t="v1">
     <datum>2022-04-01</datum>
   </tranzakcio>
-  <tranzakcio v_t="v2" s_t="s2">
+  <tranzakcio s_t="s2" v_t="v2">
     <datum>2022-04-12</datum>
   </tranzakcio>
-  <tranzakcio v_t="v2" s_t="s1">
+  <tranzakcio s_t="s1" v_t="v2">
     <datum>2022-04-12</datum>
   </tranzakcio>
-  <tranzakcio v_t="v2" s_t="s4">
+  <tranzakcio s_t="s4" v_t="v2">
     <datum>2022-05-02</datum>
   </tranzakcio>
-  <tranzakcio v_t="v2" s_t="s1">
+  <tranzakcio s_t="s1" v_t="v2">
     <datum>2022-09-11</datum>
   </tranzakcio>
-  <tranzakcio v_t="v2" s_t="s3">
+  <tranzakcio s_t="s3" v_t="v2">
     <datum>2022-09-11</datum>
   </tranzakcio>
-  <tranzakcio v_t="v2" s_t="s5">
+  <tranzakcio s_t="s5" v_t="v2">
     <datum>2022-03-05</datum>
   </tranzakcio>
-  <tranzakcio v_t="v3" s_t="s7">
+  <tranzakcio s_t="s7" v_t="v3">
     <datum>2022-03-05</datum>
   </tranzakcio>
-  <tranzakcio v_t="v3" s_t="s8">
+  <tranzakcio s_t="s8" v_t="v3">
     <datum>2022-05-25</datum>
   </tranzakcio>
-  <tranzakcio v_t="v3" s_t="s9">
+  <tranzakcio s_t="s9" v_t="v3">
     <datum>2022-10-03</datum>
   </tranzakcio>
-  <tranzakcio v_t="v3" s_t="s10">
+  <tranzakcio s_t="s10" v_t="v3">
     <datum>2022-10-03</datum>
   </tranzakcio>
-  <tranzakcio v_t="v3" s_t="s2">
+  <tranzakcio s_t="s2" v_t="v3">
     <datum>2022-10-03</datum>
   </tranzakcio>
-  <tranzakcio v_t="v3" s_t="s4">
+  <tranzakcio s_t="s4" v_t="v3">
     <datum>2022-10-09</datum>
   </tranzakcio>
-  <tranzakcio v_t="v3" s_t="s3">
+  <tranzakcio s_t="s3" v_t="v3">
     <datum>2022-11-02</datum>
   </tranzakcio>
 </NR_beadando>

@@ -3,6 +3,7 @@
 xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 <xsl:template match="/" > 
 <html>
+    <h1>NR Órarend - 2022/23. I. félév.</h1>
     <body>
         <table border="1">
             <tr>

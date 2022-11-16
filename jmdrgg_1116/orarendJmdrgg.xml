@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?xml-stylesheet type="text/xml" href="orarendJmdrgg.xsl" ?>
+
 <NR_orarend>
   <ora id="o1" tipus="előadás">
     <targy>Web technológiák</targy>

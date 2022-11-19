@@ -22,6 +22,7 @@ public class DomModifyJmdrgg {
 
   /**
    * Cukrászda xml fájl módosítására szolgáló objektum
+   *
    * @param doc
    * @param outputFilename kimeneti xml fájl neve
    */
@@ -32,6 +33,7 @@ public class DomModifyJmdrgg {
 
   /**
    * Várárló hozzáadása
+   *
    * @param vezeteknev
    * @param keresztnev
    * @param torzsvasarlo
@@ -90,6 +92,7 @@ public class DomModifyJmdrgg {
 
   /**
    * Cukrász hozzáadása
+   *
    * @param vezeteknev
    * @param keresztnev
    * @param eletkor
@@ -148,6 +151,7 @@ public class DomModifyJmdrgg {
 
   /**
    * Cukrászda hozzáadása
+   *
    * @param nev
    * @param varos
    * @param utca
@@ -213,6 +217,7 @@ public class DomModifyJmdrgg {
 
   /**
    * Sütemény hozzáadása
+   *
    * @param nev
    * @param ar
    * @param kaloria
@@ -258,7 +263,7 @@ public class DomModifyJmdrgg {
       "s" + (Integer.parseInt(lastId.substring(lastId.length() - 1)) + 1);
     newSutemeny.setAttribute("s_id", newId);
 
-    //foreign key
+    // foreign key
     newSutemeny.setAttribute("s_sl", s_sl);
 
     root.insertBefore(newSutemeny, lastSutemeny.getNextSibling());
@@ -268,6 +273,7 @@ public class DomModifyJmdrgg {
 
   /**
    * Sütemény lista hozzáadása
+   *
    * @param legnepszerubb
    * @param legnepszerutlenebb
    * @param legutobbFrissitve
@@ -307,7 +313,7 @@ public class DomModifyJmdrgg {
       "sl" + (Integer.parseInt(lastId.substring(lastId.length() - 1)) + 1);
     newSutemenyLista.setAttribute("sl_id", newId);
 
-    //foreign key
+    // foreign key
     newSutemenyLista.setAttribute("sl_c", sl_c);
 
     root.insertBefore(newSutemenyLista, lastSutemenyLista.getNextSibling());
@@ -317,6 +323,7 @@ public class DomModifyJmdrgg {
 
   /**
    * NodeLista törlése
+   *
    * @param nodeList
    */
   public void removeByQuery(NodeList nodeList) {
@@ -332,6 +339,7 @@ public class DomModifyJmdrgg {
 
   /**
    * Elem törlése id alapján
+   *
    * @param nodeType
    * @param id
    */
@@ -348,6 +356,7 @@ public class DomModifyJmdrgg {
 
   /**
    * Elemek módosítása tag alapján
+   *
    * @param nodeList
    * @param tagName
    * @param newValue
@@ -370,6 +379,7 @@ public class DomModifyJmdrgg {
 
   /**
    * Elemek módosítása tag alapján
+   *
    * @param node
    * @param tagName
    * @param newValue

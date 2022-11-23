@@ -1,0 +1,23 @@
+<!DOCTYPE HTML><html>
+   <body>
+      <h2>Students</h2>
+      
+      Keresztnév: <span style="color: 'blue'">Róbert</span><br>
+      Vezetéknév: <span style="color: 'blue'">Nagy</span><br>
+      Becenév: <span style="color: 'blue'">robi</span><br>
+      Kor: <span style="color: 'blue'">21</span><br>
+      Ösztöndíj: <span style="color: 'blue'">0</span><br>
+      
+      Keresztnév: <span style="color: 'blue'">Pista</span><br>
+      Vezetéknév: <span style="color: 'blue'">László</span><br>
+      Becenév: <span style="color: 'blue'">Laci</span><br>
+      Kor: <span style="color: 'blue'">7</span><br>
+      Ösztöndíj: <span style="color: 'blue'">9999990</span><br>
+      
+      Keresztnév: <span style="color: 'blue'">Lyoci</span><br>
+      Vezetéknév: <span style="color: 'blue'">Béla</span><br>
+      Becenév: <span style="color: 'blue'">Béla</span><br>
+      Kor: <span style="color: 'blue'">41</span><br>
+      Ösztöndíj: <span style="color: 'blue'">49000</span><br>
+      </body>
+</html>

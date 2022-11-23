@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?xml-stylesheet type="text/xml" href="studentJmdrgg_apply.xsl" ?>
+ 
+<class>
+  <student id="01">
+    <keresztnev>Róbert</keresztnev>
+    <vezeteknev>Nagy</vezeteknev>
+    <becenev>robi</becenev>
+    <kor>21</kor>
+    <osztondij>0</osztondij>
+  </student>
+  <student id="02">
+    <keresztnev>Pista</keresztnev>
+    <vezeteknev>László</vezeteknev>
+    <becenev>Laci</becenev>
+    <kor>7</kor>
+    <osztondij>9999990</osztondij>
+  </student>
+  <student id="03">
+    <keresztnev>Lyoci</keresztnev>
+    <vezeteknev>Béla</vezeteknev>
+    <becenev>Béla</becenev>
+    <kor>41</kor>
+    <osztondij>49000</osztondij>
+  </student>
+</class>

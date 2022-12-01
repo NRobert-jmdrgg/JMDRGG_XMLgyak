@@ -1,17 +1,16 @@
 package jmdrgg;
 
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import org.json.*;
+import org.json.simple.JSONObject;
 
 class ObjectJmdrgg {
 
   public static void main(String[] args) {
-    try {
-      String json = Files.readString(Path.of("./JSONjmdrgg.json"));
-    } catch (IOException e) {
-      System.out.println(e);
-    }
+    JSONObject obj = new JSONObject();
+
+    obj.put("nev", "Nagy Róbert");
+    obj.put("fizetes", "0");
+    obj.put("kor", "21");
+
+    System.out.println(obj.toString());
   }
 }

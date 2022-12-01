@@ -120,6 +120,15 @@
     <legnepszerutlenebb>Somlói galuska</legnepszerutlenebb>
     <legutobb_frissitve>2022-03-20</legutobb_frissitve>
   </sutemeny_lista>
+  <sutemeny s_id="s1" s_sl="sl1">
+    <nev>Almás pite</nev>
+    <ar>740</ar>
+    <kaloria>296</kaloria>
+    <tulajdonsag>klasszikus</tulajdonsag>
+    <tulajdonsag>fahéjas</tulajdonsag>
+    <tulajdonsag>almás</tulajdonsag>
+    <tulajdonsag>pite</tulajdonsag>
+  </sutemeny>
   <sutemeny s_id="s2" s_sl="sl1">
     <nev>Mandarinos túrótorta szelet</nev>
     <ar>990</ar>
@@ -141,6 +150,65 @@
     <tulajdonsag>piskóta</tulajdonsag>
     <tulajdonsag>torta szelet</tulajdonsag>
   </sutemeny>
+  <sutemeny s_id="s4" s_sl="sl1">
+    <nev>Mignon</nev>
+    <ar>720</ar>
+    <kaloria>232</kaloria>
+    <tulajdonsag>cukormáz</tulajdonsag>
+    <tulajdonsag>édes</tulajdonsag>
+    <tulajdonsag>Hagyományos</tulajdonsag>
+  </sutemeny>
+  <sutemeny s_id="s5" s_sl="sl2">
+    <nev>Piramis szelet</nev>
+    <ar>850</ar>
+    <kaloria>232</kaloria>
+    <tulajdonsag>krém</tulajdonsag>
+    <tulajdonsag>Csokoládés</tulajdonsag>
+    <tulajdonsag>édes</tulajdonsag>
+    <tulajdonsag>Klasszikus</tulajdonsag>
+    <tulajdonsag>krémes</tulajdonsag>
+    <tulajdonsag>piskóta</tulajdonsag>
+  </sutemeny>
+  <sutemeny s_id="s6" s_sl="sl2">
+    <nev>Képviselőfánk</nev>
+    <ar>790</ar>
+    <kaloria>200</kaloria>
+    <tulajdonsag>édes</tulajdonsag>
+    <tulajdonsag>Klasszikus</tulajdonsag>
+    <tulajdonsag>tejszínhabos</tulajdonsag>
+    <tulajdonsag>vanília krémes</tulajdonsag>
+  </sutemeny>
+  <sutemeny s_id="s7" s_sl="sl2">
+    <nev>Piskótatekercs</nev>
+    <ar>710</ar>
+    <kaloria>232</kaloria>
+    <tulajdonsag>baracklekvár</tulajdonsag>
+    <tulajdonsag>édes</tulajdonsag>
+    <tulajdonsag>Klasszikus</tulajdonsag>
+    <tulajdonsag>piskóta</tulajdonsag>
+    <tulajdonsag>tekercs</tulajdonsag>
+  </sutemeny>
+  <sutemeny s_id="s8" s_sl="sl3">
+    <nev>Málnahabos</nev>
+    <ar>710</ar>
+    <kaloria>230</kaloria>
+    <tulajdonsag>édes</tulajdonsag>
+    <tulajdonsag>gyümölcsös</tulajdonsag>
+    <tulajdonsag>habos</tulajdonsag>
+    <tulajdonsag>málnás</tulajdonsag>
+  </sutemeny>
+  <sutemeny s_id="s9" s_sl="sl3">
+    <nev>Joghurtos epertorta szelet</nev>
+    <ar>990</ar>
+    <kaloria>400</kaloria>
+    <tulajdonsag>édes</tulajdonsag>
+    <tulajdonsag>epres</tulajdonsag>
+    <tulajdonsag>gyümölcsös</tulajdonsag>
+    <tulajdonsag>klasszikus</tulajdonsag>
+    <tulajdonsag>piskóta</tulajdonsag>
+    <tulajdonsag>tejszihabos</tulajdonsag>
+    <tulajdonsag>torta szelet</tulajdonsag>
+  </sutemeny>
   <sutemeny s_id="s10" s_sl="sl3">
     <nev>Somlói galuska</nev>
     <ar>1100</ar>
@@ -154,7 +222,7 @@
   <vasarlo v_id="v1">
     <nev>
       <vezeteknev>Nagy</vezeteknev>
-      <keresztnev>Pista</keresztnev>
+      <keresztnev>Róbert</keresztnev>
     </nev>
     <torzsvasarlo>igen</torzsvasarlo>
     <eletkor>21</eletkor>
